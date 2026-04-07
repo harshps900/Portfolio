@@ -69,7 +69,7 @@ export default function Header() {
                         </motion.div>
                     ))}
                     <a 
-                        href="/api/download/Harsh_Pal_Singh_Resume.pdf"
+                        href="/Harsh_Pal_Singh_Resume.pdf"
                         download="Harsh_Pal_Singh_Resume.pdf"
                         className="px-6 py-2 rounded-xl bg-emerald-500 text-[#020617] font-black text-sm hover:bg-emerald-400 transition-all hover:scale-105 active:scale-95"
                     >
@@ -107,7 +107,7 @@ export default function Header() {
                                 </Link>
                             ))}
                             <a 
-                                href="/api/download/Harsh_Pal_Singh_Resume.pdf"
+                                href="/Harsh_Pal_Singh_Resume.pdf"
                                 download="Harsh_Pal_Singh_Resume.pdf"
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="w-full py-4 rounded-xl bg-emerald-500 text-center text-[#020617] font-black text-lg"
