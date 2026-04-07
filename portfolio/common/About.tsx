@@ -3,6 +3,7 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { Cpu, Globe, Rocket } from "lucide-react";
+import Image from "next/image";
 
 const About = forwardRef<HTMLElement>((props, ref) => {
     return (
@@ -27,10 +28,11 @@ const About = forwardRef<HTMLElement>((props, ref) => {
                             <div className="absolute inset-0 bg-blue-600/10 rounded-[3rem] blur-3xl transition-all group-hover:bg-emerald-500/10 z-0" />
                             
                             {/* Profile Image */}
-                            <img 
+                            <Image 
                                 src="/profile.jpg" 
                                 alt="Harsh Pal Singh" 
-                                className="w-full h-full object-cover brightness-90 contrast-110 saturate-[0.8] group-hover:saturate-100 group-hover:brightness-100 transition-all duration-700 scale-105 group-hover:scale-100 z-10"
+                                fill
+                                className="object-cover brightness-90 contrast-110 saturate-[0.8] group-hover:saturate-100 group-hover:brightness-100 transition-all duration-700 scale-105 group-hover:scale-100 z-10"
                             />
 
                             {/* Scanline Effect */}
