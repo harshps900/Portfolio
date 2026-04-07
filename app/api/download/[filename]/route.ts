@@ -9,16 +9,23 @@ export async function GET(
     const { filename } = await params;
     const filePath = path.join(process.cwd(), 'public', 'Harsh_Pal_Singh_Resume.pdf');
     
-    if (!fs.existsSync(filePath)) {
-        return new NextResponse('File not found', { status: 404 });
-    }
+    try {
+        if (!fs.existsSync(filePath)) {
+            console.error(`File not found at: ${filePath}`);
+            return new NextResponse('File not found', { status: 404 });
+        }
 
-    const fileBuffer = fs.readFileSync(filePath);
-    
-    return new NextResponse(fileBuffer, {
-        headers: {
-            'Content-Type': 'application/pdf',
-            'Content-Disposition': `attachment; filename="${filename}"`,
-        },
-    });
+        const fileBuffer = await fs.promises.readFile(filePath);
+        
+        return new NextResponse(fileBuffer, {
+            headers: {
+                'Content-Type': 'application/pdf',
+                'Content-Disposition': `attachment; filename="${filename}"`,
+                'Cache-Control': 'no-cache',
+            },
+        });
+    } catch (error) {
+        console.error('Download error:', error);
+        return new NextResponse('Internal Server Error', { status: 500 });
+    }
 }

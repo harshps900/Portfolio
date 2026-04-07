@@ -70,6 +70,7 @@ export default function Header() {
                     ))}
                     <a 
                         href="/api/download/Harsh_Pal_Singh_Resume.pdf"
+                        download="Harsh_Pal_Singh_Resume.pdf"
                         className="px-6 py-2 rounded-xl bg-emerald-500 text-[#020617] font-black text-sm hover:bg-emerald-400 transition-all hover:scale-105 active:scale-95"
                     >
                         Resume
