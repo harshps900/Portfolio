@@ -50,7 +50,7 @@ const PROJECTS: Project[] = [
         role: "SYSTEM ARCHITECT",
         problem: "Ultra-fast messaging platform built for high-scale communication, focusing on minimal latency and message persistence.",
         impact: "10k+ Concurrent users",
-        tags: ["Golang", "Redis", "React"],
+        tags: ["Firebase", "Tailwind", "React"],
         image: ChatApp,
         liveUrl: "",
         githubUrl: "",
