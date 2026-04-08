@@ -40,7 +40,7 @@ const JOURNEY = [
 
 const Experience = forwardRef<HTMLElement>((props, ref) => {
     return (
-        <section id="experience" ref={ref} className="w-full py-40 bg-[#020617] relative overflow-hidden">
+        <section id="experience" ref={ref} className="w-full py-20 md:py-32 lg:py-40 bg-[#020617] relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="mb-32">
                     <motion.p 

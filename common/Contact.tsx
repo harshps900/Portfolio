@@ -49,7 +49,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
     };
 
     return (
-        <section id="contact" ref={ref} className="w-full py-40 bg-[#020617] relative overflow-hidden">
+        <section id="contact" ref={ref} className="w-full py-20 md:py-32 lg:py-40 bg-[#020617] relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="mb-24">
                     <motion.h2 

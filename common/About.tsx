@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const About = forwardRef<HTMLElement>((props, ref) => {
     return (
-        <section id="about" ref={ref} className="w-full py-40 bg-[#020617] relative overflow-hidden">
+        <section id="about" ref={ref} className="w-full py-20 md:py-32 lg:py-40 bg-[#020617] relative overflow-hidden">
             {/* Background Accent */}
             <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
 

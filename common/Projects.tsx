@@ -52,8 +52,8 @@ const PROJECTS: Project[] = [
         impact: "10k+ Concurrent users",
         tags: ["Golang", "Redis", "React"],
         image: ChatApp,
-        liveUrl: "#",
-        githubUrl: "#",
+        liveUrl: "",
+        githubUrl: "",
     },
     // {
     //     title: "Khana Khazana",
@@ -69,7 +69,7 @@ const PROJECTS: Project[] = [
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
     return (
-        <section id="projects" ref={ref} className="w-full py-40 bg-[#020617] transition-colors duration-500">
+        <section id="projects" ref={ref} className="w-full py-20 md:py-32 lg:py-40 bg-[#020617] transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="mb-24">
                     <motion.p
@@ -98,7 +98,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                     </div>
                 </div>
 
-                <div className="space-y-20">
+                <div className="space-y-12 lg:space-y-32">
                     {PROJECTS.map((project, index) => (
                         <motion.div
                             key={index}
@@ -106,11 +106,11 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className={`group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${project.featured ? 'mb-32' : ''}`}
+                            className={`group relative grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-12 items-center bg-zinc-900/30 lg:bg-transparent border border-white/5 lg:border-none rounded-[2.5rem] lg:rounded-none overflow-hidden ${project.featured ? 'mb-16 lg:mb-32' : ''}`}
                         >
                             {/* Image Part */}
                             <div className={`lg:col-span-7 ${index % 2 !== 0 && project.featured ? 'lg:order-2' : ''}`}>
-                                <div className="relative aspect-video rounded-[2.5rem] overflow-hidden border border-white/5 bg-zinc-900 group-hover:border-emerald-500/30 transition-all duration-700">
+                                <div className="relative aspect-video lg:rounded-[2.5rem] overflow-hidden lg:border border-white/5 bg-zinc-900 group-hover:border-emerald-500/30 transition-all duration-700">
                                     <Image
                                         src={project.image}
                                         alt={project.title}
@@ -122,50 +122,79 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                             </div>
 
                             {/* Content Part */}
-                            <div className="lg:col-span-5 space-y-8">
+                            <div className="lg:col-span-5 space-y-6 lg:space-y-8 p-6 lg:p-0">
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3 text-xs font-black tracking-widest text-emerald-500 uppercase">
                                         <Zap size={14} />
                                         {project.role}
                                     </div>
-                                    <h3 className="text-4xl md:text-5xl font-black text-white tracking-tight">{project.title}</h3>
-                                    <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 space-y-2">
-                                        <p className="text-xs font-black uppercase tracking-widest text-zinc-500">Problem Statement</p>
-                                        <p className="text-zinc-400 font-medium leading-relaxed">{project.problem}</p>
+                                    <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight">{project.title}</h3>
+                                    <div className="p-4 lg:p-6 rounded-2xl bg-zinc-900/50 border border-white/5 space-y-2">
+                                        <p className="text-[10px] lg:text-xs font-black uppercase tracking-widest text-zinc-500">Problem Statement</p>
+                                        <p className="text-zinc-400 text-sm lg:text-base font-medium leading-relaxed">{project.problem}</p>
                                     </div>
                                 </div>
 
-                                <div className="flex gap-12">
+                                <div className="flex gap-8 lg:gap-12">
                                     <div className="space-y-1">
                                         <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Impact</p>
-                                        <p className="text-xl font-black text-white">{project.impact}</p>
+                                        <p className="text-lg lg:text-xl font-black text-white">{project.impact}</p>
                                     </div>
                                     <div className="space-y-1">
                                         <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Stack</p>
                                         <div className="flex gap-2">
                                             {project.tags.map(tag => (
-                                                <span key={tag} className="text-sm font-bold text-blue-400">{tag}</span>
+                                                <span key={tag} className="text-xs lg:text-sm font-bold text-blue-400">{tag}</span>
                                             ))}
                                         </div>
                                     </div>
                                 </div>
 
                                 {project.featured && (
-                                    <div className="p-6 rounded-2xl bg-emerald-500/5 border border-emerald-500/10 relative overflow-hidden italic">
-                                        <Quote size={40} className="absolute -top-2 -left-2 text-emerald-500/10" />
-                                        <p className="text-sm text-emerald-400 font-medium relative z-10 leading-relaxed">
+                                    <div className="p-4 lg:p-6 rounded-2xl bg-emerald-500/5 border border-emerald-500/10 relative overflow-hidden italic">
+                                        <Quote size={32} className="absolute -top-2 -left-2 text-emerald-500/10" />
+                                        <p className="text-xs lg:text-sm text-emerald-400 font-medium relative z-10 leading-relaxed">
                                             &quot;{project.lesson}&quot;
                                         </p>
                                     </div>
                                 )}
 
-                                <div className="flex items-center gap-6 pt-4">
-                                    <a href={project.liveUrl} className="px-8 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm transition-all hover:scale-105 active:scale-95 shadow-lg shadow-emerald-600/20">
-                                        Live Demo
-                                    </a>
-                                    <a href={project.githubUrl} className="px-8 py-3 rounded-xl bg-blue-900/30 border border-blue-500/30 hover:border-blue-500 hover:bg-blue-900/50 text-blue-300 font-black text-sm transition-all hover:scale-105 active:scale-95">
-                                        Source Code
-                                    </a>
+                                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 lg:gap-6 pt-4">
+                                    {project.liveUrl && project.liveUrl !== "#" ? (
+                                        <a 
+                                            href={project.liveUrl} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-8 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-center font-black text-xs lg:text-sm transition-all hover:scale-105 active:scale-95 shadow-lg shadow-emerald-600/20"
+                                        >
+                                            Live Demo
+                                        </a>
+                                    ) : (
+                                        <button 
+                                            disabled
+                                            className="px-8 py-3 rounded-xl bg-zinc-800 text-zinc-600 cursor-not-allowed font-black text-xs lg:text-sm"
+                                        >
+                                            Coming Soon
+                                        </button>
+                                    )}
+
+                                    {project.githubUrl && project.githubUrl !== "#" ? (
+                                        <a 
+                                            href={project.githubUrl} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-8 py-3 rounded-xl bg-blue-900/30 border border-blue-500/30 hover:border-blue-500 hover:bg-blue-900/50 text-blue-300 text-center font-black text-xs lg:text-sm transition-all hover:scale-105 active:scale-95"
+                                        >
+                                            Source Code
+                                        </a>
+                                    ) : (
+                                        <button 
+                                            disabled
+                                            className="px-8 py-3 rounded-xl bg-zinc-800/50 border border-white/5 text-zinc-600 cursor-not-allowed font-black text-xs lg:text-sm"
+                                        >
+                                            Private Repo
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>

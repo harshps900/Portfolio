@@ -20,7 +20,7 @@ const SKILLS = [
 
 const Skills = forwardRef<HTMLElement>((props, ref) => {
     return (
-        <section id="skills" ref={ref} className="w-full py-40 bg-[#020617] transition-colors duration-500">
+        <section id="skills" ref={ref} className="w-full py-20 md:py-32 lg:py-40 bg-[#020617] transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col items-center text-center mb-24">
                     <motion.h2 
