@@ -28,7 +28,7 @@ export default function Header() {
     return (
         <header 
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-                isScrolled ? "py-4 bg-[#020617]/80 backdrop-blur-xl border-b border-white/5" : "py-8 bg-transparent"
+                isScrolled ? "py-4 bg-[#fbfaf7]/90 backdrop-blur-xl border-b border-zinc-200/60" : "py-8 bg-transparent"
             }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
@@ -41,18 +41,18 @@ export default function Header() {
                         href="#home"
                         className="group flex flex-col"
                     >
-                        <div className="flex items-center gap-0.5">
-                            <span className="text-2xl font-black tracking-tighter text-white">HPS</span>
-                            <span className="text-2xl font-black text-emerald-500 animate-pulse">.</span>
+                        <div className="flex items-center gap-1.5">
+                            <span className="text-2xl font-bold tracking-widest text-gold-gradient text-glow-gold font-serif-luxury">HPS</span>
+                            <span className="text-[9px] font-mono text-[#bda682] tracking-wider font-bold">EST. 2025</span>
                         </div>
-                        <span className="text-[8px] font-black tracking-[0.3em] text-zinc-500 uppercase opacity-0 group-hover:opacity-100 transition-opacity">
-                            Engineering Identity
+                        <span className="text-[7px] font-bold tracking-[0.35em] text-zinc-500 uppercase opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            Precision Engineering
                         </span>
                     </Link>
                 </motion.div>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-8 text-sm font-bold">
+                <nav className="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest">
                     {NAV_LINKS.map((link, i) => (
                         <motion.div
                             key={link.name}
@@ -62,7 +62,7 @@ export default function Header() {
                         >
                             <Link
                                 href={link.href}
-                                className="text-zinc-400 hover:text-emerald-400 transition-colors"
+                                className="text-zinc-500 hover:text-[#bda682] transition-colors"
                             >
                                 {link.name}
                             </Link>
@@ -71,7 +71,7 @@ export default function Header() {
                     <a 
                         href="/Harsh_Pal_Singh_Resume.pdf"
                         download="Harsh_Pal_Singh_Resume.pdf"
-                        className="px-6 py-2 rounded-xl bg-emerald-500 text-[#020617] font-black text-sm hover:bg-emerald-400 transition-all hover:scale-105 active:scale-95"
+                        className="px-5 py-2.5 rounded bg-[#bda682] text-white font-black text-xs hover:bg-[#bda682]/90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#bda682]/10 border border-[#bda682]/20"
                     >
                         Resume
                     </a>
@@ -79,10 +79,10 @@ export default function Header() {
 
                 {/* Mobile Menu Toggle */}
                 <button 
-                    className="md:hidden text-white p-2"
+                    className="md:hidden text-[#1c1b1a] p-2"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
-                    {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+                    {isMobileMenuOpen ? <X size={28} className="text-[#bda682]" /> : <Menu size={28} className="text-[#bda682]" />}
                 </button>
             </div>
 
@@ -93,7 +93,7 @@ export default function Header() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-[#020617] border-b border-white/5 overflow-hidden"
+                        className="md:hidden bg-[#fbfaf7] border-b border-zinc-200/60 overflow-hidden"
                     >
                         <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
                             {NAV_LINKS.map((link) => (
@@ -101,7 +101,7 @@ export default function Header() {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-2xl font-black text-white hover:text-emerald-400"
+                                    className="text-lg font-black text-zinc-600 hover:text-[#bda682] uppercase tracking-widest"
                                 >
                                     {link.name}
                                 </Link>
@@ -110,7 +110,7 @@ export default function Header() {
                                 href="/Harsh_Pal_Singh_Resume.pdf"
                                 download="Harsh_Pal_Singh_Resume.pdf"
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="w-full py-4 rounded-xl bg-emerald-500 text-center text-[#020617] font-black text-lg"
+                                className="w-full py-4 rounded bg-[#bda682] text-center text-white font-black text-sm uppercase tracking-widest"
                             >
                                 Resume
                             </a>

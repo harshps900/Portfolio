@@ -1,87 +1,60 @@
 "use client";
 
 import { forwardRef } from "react";
-import { motion } from "framer-motion";
-import { Cpu, Globe, Rocket } from "lucide-react";
-import Image from "next/image";
 
 const About = forwardRef<HTMLElement>((props, ref) => {
     return (
-        <section id="about" ref={ref} className="w-full py-20 md:py-32 lg:py-40 bg-[#020617] relative overflow-hidden">
+        <section id="about" ref={ref} className="w-full py-12 md:py-20 lg:py-24 bg-[#fbfaf7] relative overflow-hidden">
             {/* Background Accent */}
-            <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#bda682]/5 rounded-full blur-[130px] -translate-x-1/2 -translate-y-1/2" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                    {/* Left - Graphic Placeholder */}
-                    <motion.div 
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="relative"
-                    >
-                        {/* Decorative Corner Brackets */}
-                        <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-emerald-500/40 rounded-tl-2xl z-20" />
-                        <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-blue-600/40 rounded-br-2xl z-20" />
+                    
+                    {/* Left - Profile Image placeholder for FloatingWatch morphing */}
+                    <div className="relative max-w-md mx-auto w-full flex justify-center">
+                        {/* Outer concentric dial bezel */}
+                        <div className="absolute -inset-4 border border-[#bda682]/20 rounded-full z-0 pointer-events-none" />
+                        <div className="absolute -inset-8 border border-[#bda682]/10 rounded-full z-0 pointer-events-none" />
 
-                        <div className="aspect-square rounded-[3rem] overflow-hidden border border-white/10 relative group bg-[#0f172a]">
-                            <div className="absolute inset-0 bg-blue-600/10 rounded-[3rem] blur-3xl transition-all group-hover:bg-emerald-500/10 z-0" />
-                            
-                            {/* Profile Image */}
-                            <Image 
-                                src="/profile.jpg" 
-                                alt="Harsh Pal Singh" 
-                                fill
-                                className="object-cover brightness-90 contrast-110 saturate-[0.8] group-hover:saturate-100 group-hover:brightness-100 transition-all duration-700 scale-105 group-hover:scale-100 z-10"
+                        <div 
+                            className="w-72 h-72 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] rounded-full border-[4px] border-[#bda682] shadow-[0_20px_50px_rgba(189,166,130,0.15)] bg-white overflow-hidden relative flex items-center justify-center z-10"
+                        >
+                            <div 
+                                id="about-image-placeholder"
+                                className="w-full h-full rounded-full opacity-0 pointer-events-none"
                             />
-
-                            {/* Scanline Effect */}
-                            <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0)_50%,rgba(16,185,129,0.1)_50.2%,rgba(16,185,129,0)_50.4%)] bg-[length:100%_4px] animate-scan opacity-20 pointer-events-none z-20" />
-
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-80 z-20" />
-                            
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Right - Content */}
                     <div className="space-y-12">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="space-y-6"
-                        >
-                            <h2 className="text-5xl md:text-6xl font-black text-white tracking-tighter leading-tight">
+                        <div className="space-y-6">
+                            <h2 className="text-5xl md:text-6xl font-bold text-[#1c1b1a] tracking-tight leading-tight font-serif-luxury">
                                 Precision in Every Pixel, <br />
-                                <span className="text-emerald-500">Logic in Every Byte.</span>
+                                <span className="text-gold-gradient text-glow-gold">Logic in Every Byte.</span>
                             </h2>
-                            <div className="space-y-6 text-lg text-zinc-400 font-medium leading-relaxed">
+                            <div className="space-y-6 text-lg text-zinc-600 font-medium leading-relaxed">
                                 <p>
-                                    With a strong foundation at <span className="text-white font-bold">SoftSource Technolabs</span>, I specialize in building high-performance web systems that bridge the gap between complex backend architectures and seamless user experiences.
+                                    With a strong foundation at <span className="text-[#bda682] font-bold">SoftSource Technolabs</span>, I specialize in building high-performance web systems that bridge the gap between complex backend architectures and seamless user experiences.
                                 </p>
                                 <p>
-                                    My focus lies in <span className="text-emerald-400 font-bold">Server-Side Rendering (SSR)</span>, advanced performance optimization, and robust API integration. I don&apos;t just write code; I engineer solutions that ensure speed, accessibility, and business scalability.
+                                    My focus lies in <span className="text-[#bda682] font-bold">Server-Side Rendering (SSR)</span>, advanced performance optimization, and robust API integration. Much like the microscopic gears of a luxury watch, I ensure every logical component operates with absolute alignment and efficiency.
                                 </p>
                             </div>
-                        </motion.div>
+                        </div>
 
-                        {/* Stats */}
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="flex flex-col sm:flex-row gap-12 pt-8 border-t border-zinc-800"
-                        >
-                            <div className="space-y-1 border-l-4 border-emerald-500 pl-6">
-                                <p className="text-4xl font-black text-white">1+ Years</p>
-                                <p className="text-xs font-black uppercase tracking-widest text-zinc-500">EXPERIENCE</p>
+                        {/* Stats styled like sub-dials */}
+                        <div className="flex flex-col sm:flex-row gap-12 pt-8 border-t border-zinc-200">
+                            <div className="space-y-1 border-l-4 border-[#bda682] pl-6">
+                                <p className="text-4xl font-bold text-[#1c1b1a] font-serif-luxury">1+ Years</p>
+                                <p className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase">ENGINEERING</p>
                             </div>
-                            <div className="space-y-1 border-l-4 border-blue-600 pl-6">
-                                <p className="text-4xl font-black text-white">10+ Labs</p>
-                                <p className="text-xs font-black uppercase tracking-widest text-zinc-500">DEPLOYMENTS</p>
+                            <div className="space-y-1 border-l-4 border-[#967f59] pl-6">
+                                <p className="text-4xl font-bold text-[#1c1b1a] font-serif-luxury">10+ Labs</p>
+                                <p className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase">DEPLOYMENTS</p>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>

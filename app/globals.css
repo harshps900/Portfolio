@@ -5,12 +5,12 @@ html {
 }
 
 :root {
-  --background: #030712;
-  --foreground: #f8fafc;
-  --primary: #10b981;
-  --secondary: #1d4ed8;
-  --card: #0f172a;
-  --border: #1e293b;
+  --background: #fbfaf7;
+  --foreground: #1c1b1a;
+  --primary: #bda682;
+  --secondary: #967f59;
+  --card: #ffffff;
+  --border: #e9e8e2;
 }
 
 @theme inline {
@@ -20,21 +20,29 @@ html {
   --color-secondary: var(--secondary);
   --color-card: var(--card);
   --color-border-subtle: var(--border);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
-  .text-glow-emerald {
-    text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  .text-glow-gold {
+    text-shadow: 0 0 20px rgba(197, 168, 128, 0.3);
+  }
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #1c1b1a 0%, #bda682 60%, #866d48 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .font-serif-luxury {
+    font-family: var(--font-serif), serif;
   }
   .bg-glass {
     @apply bg-white/5 backdrop-blur-lg border border-white/10;
