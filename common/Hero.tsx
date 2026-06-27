@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef } from 'react';
+import { forwardRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ShieldCheck } from 'lucide-react';
 
@@ -71,8 +71,8 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ scrollToConnect }, ref) => {
                         </div>
                     </div>
 
-                    {/* Right Content - Clock Showcase Placeholder */}
-                    <div className="lg:col-span-5 flex justify-center relative">
+                    {/* Right Content - Clock Showcase Placeholder (hidden on mobile, block lg:block) */}
+                    <div className="hidden lg:flex lg:col-span-5 justify-center relative">
                         <div 
                             id="hero-watch-placeholder"
                             className="w-72 h-72 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] rounded-full opacity-0 pointer-events-none"

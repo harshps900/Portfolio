@@ -71,6 +71,13 @@ export default function FloatingWatch() {
         if (!parentEl) return;
 
         const initAnimation = () => {
+            // On mobile viewports (< 1024px), completely skip morph calculations
+            if (window.innerWidth < 1024) {
+                const oldST = ScrollTrigger.getById("watch-scroll-trigger");
+                if (oldST) oldST.kill();
+                return;
+            }
+
             const heroPlaceholder = document.getElementById("hero-watch-placeholder");
             const aboutPlaceholder = document.getElementById("about-image-placeholder");
 
@@ -199,7 +206,7 @@ export default function FloatingWatch() {
         <div 
             ref={watchRef}
             style={{ perspective: 1000, opacity: 0 }} 
-            className="absolute top-0 left-0 w-72 h-72 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] z-40 pointer-events-auto"
+            className="absolute top-0 left-0 w-72 h-72 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] z-40 pointer-events-auto hidden lg:block"
         >
             <motion.div
                 onMouseMove={handleMouseMove}
