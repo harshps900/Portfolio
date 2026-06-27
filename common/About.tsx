@@ -1,6 +1,7 @@
 "use client";
 
 import { forwardRef } from "react";
+import Image from "next/image";
 
 const About = forwardRef<HTMLElement>((props, ref) => {
     return (
@@ -20,9 +21,20 @@ const About = forwardRef<HTMLElement>((props, ref) => {
                         <div 
                             className="w-72 h-72 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] rounded-full border-[4px] border-[#bda682] shadow-[0_20px_50px_rgba(189,166,130,0.15)] bg-white overflow-hidden relative flex items-center justify-center z-10"
                         >
+                            {/* Natively show image on mobile viewports */}
+                            <div className="absolute inset-0 block md:hidden">
+                                <Image 
+                                    src="/profile.jpg" 
+                                    alt="Harsh Pal Singh" 
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 350px"
+                                    className="object-cover"
+                                    priority
+                                />
+                            </div>
                             <div 
                                 id="about-image-placeholder"
-                                className="w-full h-full rounded-full opacity-0 pointer-events-none"
+                                className="w-full h-full rounded-full opacity-0 pointer-events-none hidden md:block"
                             />
                         </div>
                     </div>

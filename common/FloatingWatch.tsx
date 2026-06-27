@@ -109,7 +109,16 @@ export default function FloatingWatch() {
                 if (t.vars.id === "watch-scroll-trigger") t.kill();
             });
 
-            // Set initial position and fade-in the watch now that coordinates are resolved
+            const deltaX = endX - startX;
+            const deltaY = endY - startY;
+
+            const targetScale = aboutRect.width / heroRect.width;
+
+            // Kill any existing ScrollTrigger to prevent duplicates
+            const oldST = ScrollTrigger.getById("watch-scroll-trigger");
+            if (oldST) oldST.kill();
+
+            // Set initial position centered at Hero placeholder
             gsap.set(watchEl, {
                 x: startX,
                 y: startY,
@@ -120,15 +129,19 @@ export default function FloatingWatch() {
                 opacity: 1
             });
 
-            // Calculate translation offsets and scale factor
-            const deltaX = endX - startX;
-            const deltaY = endY - startY;
-            const targetScale = aboutRect.width / heroRect.width;
+            // On mobile viewports, keep watch static in Hero section and skip scroll-morph timeline
+            if (window.innerWidth < 768) {
+                gsap.set(watchDetailsRef.current, { opacity: 1 });
+                gsap.set(watchBezelRef.current, { opacity: 1 });
+                gsap.set(profileImageRef.current, { opacity: 0 });
+                // Reset background color in case it was changed
+                gsap.set(watchEl, { backgroundColor: "#ffffff" });
+                return;
+            }
 
-            // Setup scroll animation timeline
             const tl = gsap.timeline({
-                id: "watch-scroll-trigger",
                 scrollTrigger: {
+                    id: "watch-scroll-trigger",
                     trigger: "#home",
                     start: "top top",
                     end: "bottom top",
