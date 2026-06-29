@@ -44,7 +44,7 @@ const Skills = forwardRef<HTMLElement>((props, ref) => {
                         transition={{ delay: 0.1 }}
                         className="text-zinc-500 text-lg max-w-2xl font-medium leading-relaxed"
                     >
-                        Much like complications in horology that add advanced utility to a timepiece, these core technologies expand my development scope beyond standard layouts.
+                      Just as watch complications add functionality beyond telling time, these technologies enable me to develop responsive, interactive, and scalable web applications with seamless user experiences.
                     </motion.p>
                 </div>
 
