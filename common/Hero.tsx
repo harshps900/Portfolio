@@ -61,12 +61,11 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ scrollToConnect }, ref) => {
                         </div>
 
                         <div className="pt-8 border-t border-zinc-200">
-                            <p className="text-[10px] font-mono tracking-widest text-zinc-400 mb-4 uppercase">Horological Heritage</p>
                             <div className="flex items-center gap-3 text-zinc-600 font-bold group">
                                 <span className="p-2 bg-white border border-zinc-200 rounded group-hover:bg-[#f5f4ef] transition-colors">
                                     <ShieldCheck size={18} className="text-[#bda682]" />
                                 </span>
-                                Ex-SoftSource Technolabs • Chrono Developer
+                                Ex-SoftSource Technolabs • Frontend Developer
                             </div>
                         </div>
                     </div>

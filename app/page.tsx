@@ -6,6 +6,7 @@ import Hero from "@/common/Hero";
 import About from "@/common/About";
 import Skills from "@/common/Skills";
 import Experience from "@/common/Experience";
+import Achievements from "@/common/Achievements";
 import Projects from "@/common/Projects";
 import Contact from "@/common/Contact";
 import Footer from "@/common/Footer";
@@ -27,6 +28,7 @@ export default function Home() {
         </div>
         <Skills />
         <Experience />
+        <Achievements />
         <Projects />
         <Contact />
         <Footer />
