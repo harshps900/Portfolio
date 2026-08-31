@@ -16,6 +16,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Harsh Pal Singh | Portfolio",
   description: " Engineering in Frontend Development",
+  verification: {
+    google: "04t-yY7FdHhcXNAaeVjAO-maoiOxiOXLDQRTanAXj_g",
+  },
 };
 
 export default function RootLayout({
