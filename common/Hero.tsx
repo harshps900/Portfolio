@@ -1,14 +1,25 @@
 "use client";
 
-import { forwardRef, useState, useEffect } from 'react';
-import Link from 'next/link';
+import { forwardRef } from 'react';
 import { ShieldCheck } from 'lucide-react';
+import TextType from './TextType';
 
 interface HeroProps {
     scrollToConnect?: () => void;
 }
 
 const Hero = forwardRef<HTMLElement, HeroProps>(({ scrollToConnect }, ref) => {
+    const handleContactClick = () => {
+        if (scrollToConnect) {
+            scrollToConnect();
+        } else {
+            const contactSection = document.getElementById("contact");
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    };
+
     return (
         <section
             id="home"
@@ -27,12 +38,19 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ scrollToConnect }, ref) => {
                     
                     {/* Left Content */}
                     <div className="lg:col-span-7 space-y-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#bda682]/10 border border-[#bda682]/20 text-[#bda682] text-[10px] font-mono tracking-widest uppercase">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#bda682] animate-ping" />
-                            Calibrating Systems
-                        </div>
-
                         <div className="space-y-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#bda682]/10 border border-[#bda682]/20 text-[#bda682] text-xs font-mono tracking-widest uppercase font-bold">
+                                Hello{" "}
+                                <span className="text-[#1c1b1a] font-black">
+                                    <TextType
+                                        text={["Developers", "MERN Enthusiasts", "Happy Coding!"]}
+                                        typingSpeed={75}
+                                        pauseDuration={1600}
+                                        showCursor={true}
+                                        cursorCharacter="|"
+                                    />
+                                </span>
+                            </div>
                             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#1c1b1a] leading-none font-serif-luxury">
                                 Harsh Pal Singh
                             </h1>
@@ -42,22 +60,23 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ scrollToConnect }, ref) => {
                         </div>
 
                         <p className="max-w-xl text-lg text-zinc-500 leading-relaxed font-medium">
-                            Engineering high-performance web systems with the attention to detail of luxury horology. Focused on pixel-perfect accuracy, optimized latency, and robust code architectures.
+                            Welcome to my portfolio. I'm Harsh, a passionate Full Stack Developer specializing in modern web technologies and cloud solutions.
                         </p>
 
                         <div className="flex flex-wrap gap-6">
-                            <Link 
-                                href="#projects"
-                                className="px-8 py-4 rounded bg-[#bda682] hover:bg-[#bda682]/95 text-white font-black text-xs uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#bda682]/15"
+                            <a 
+                                href="/Harsh_Pal_Singh_Resume.pdf"
+                                download="Harsh_Pal_Singh_Resume.pdf"
+                                className="px-8 py-4 rounded bg-[#bda682] hover:bg-[#bda682]/95 text-white font-black text-xs uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#bda682]/15 text-center cursor-pointer"
                             >
-                                View Collections
-                            </Link>
-                            <Link 
-                                href="#contact"
-                                className="px-8 py-4 rounded bg-white border border-zinc-200 hover:border-[#bda682] text-zinc-600 hover:text-zinc-900 font-black text-xs uppercase tracking-widest transition-all hover:scale-105 active:scale-95"
+                                Download Resume
+                            </a>
+                            <button 
+                                onClick={handleContactClick}
+                                className="px-8 py-4 rounded bg-white border border-zinc-200 hover:border-[#bda682] text-zinc-600 hover:text-[#bda682] font-black text-xs uppercase tracking-widest transition-all hover:scale-105 active:scale-95 cursor-pointer"
                             >
-                                Request Connection
-                            </Link>
+                                Contact Me
+                            </button>
                         </div>
 
                         <div className="pt-8 border-t border-zinc-200">

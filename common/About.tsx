@@ -44,7 +44,7 @@ const About = forwardRef<HTMLElement>((props, ref) => {
                         <div className="space-y-6">
                             <h2 className="text-5xl md:text-6xl font-bold text-[#1c1b1a] tracking-tight leading-tight font-serif-luxury">
                                 Precision in Every Pixel, <br />
-                                <span className="text-gold-gradient text-glow-gold">Logic in Every Byte.</span>
+                                <span className="text-gold-gradient text-glow-gold">Logic in Every Byte</span>
                             </h2>
                             <div className="space-y-6 text-lg text-zinc-600 font-medium leading-relaxed">
                                 <p>

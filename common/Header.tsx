@@ -44,11 +44,7 @@ export default function Header() {
                     >
                         <div className="flex items-center gap-1.5">
                             <span className="text-2xl font-bold tracking-widest text-gold-gradient text-glow-gold font-serif-luxury">HPS</span>
-                            <span className="text-[9px] font-mono text-[#bda682] tracking-wider font-bold">EST. 2025</span>
                         </div>
-                        <span className="text-[7px] font-bold tracking-[0.35em] text-zinc-500 uppercase opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            Precision Engineering
-                        </span>
                     </Link>
                 </motion.div>
 
