@@ -1,130 +1,83 @@
 "use client";
 
 import { forwardRef } from "react";
-import { motion } from "framer-motion";
-import { 
-    Cpu, Code2, Database, Layout, Server, Terminal, Zap, Github  
-} from "lucide-react";
 
-const SKILLS = [
-    { name: "React/Next.js", icon: <Cpu size={20} />, color: "text-[#bda682]" },
-    { name: "TypeScript", icon: <Code2 size={20} />, color: "text-zinc-600" },
-    { name: "Node.js", icon: <Server size={20} />, color: "text-[#bda682]" },
-    { name: "Express", icon: <Terminal size={20} />, color: "text-zinc-600" },
-    { name: "MongoDB", icon: <Database size={20} />, color: "text-[#bda682]" },
-    { name: "WebSockets", icon: <Zap size={20} />, color: "text-zinc-600" },
-    { name: "Tailwind CSS", icon: <Layout size={20} />, color: "text-[#bda682]" },
-    { name: "Github Actions", icon: <Github size={20} />, color: "text-zinc-600" },
+const SKILL_CATEGORIES = [
+    {
+        number: "01",
+        category: "FRONTEND ENGINEERING",
+        description: "Building modern, responsive, and interactive user interfaces with optimal performance.",
+        skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "React.js", "Next.js", "Redux Toolkit", "Tailwind CSS", "Axios"],
+    },
+    {
+        number: "02",
+        category: "BACKEND ARCHITECTURE",
+        description: "Creating scalable RESTful APIs, authentication protocols, and server-side applications.",
+        skills: ["Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs", "Socket.io", "JWT Auth"],
+    },
+    {
+        number: "03",
+        category: "Web design",
+        description: "Creating visually appealing, user-friendly, and responsive website layouts using modern design principles and tools.",
+        skills: ["Figma", "Wireframing", "Prototyping", "UI/UX Design"],
+    },
+    {
+        number: "04",
+        category: "TOOLS & WORKFLOW",
+        description: "Developer tooling for building, testing, version control, and production deployments.",
+        skills: ["Git", "GitHub", "Vercel", "Postman", "VS Code", "NPM", "Webpack / Vite"],
+    },
 ];
 
 const Skills = forwardRef<HTMLElement>((props, ref) => {
     return (
-        <section id="skills" ref={ref} className="w-full py-12 md:py-20 lg:py-24 bg-[#fbfaf7] transition-colors duration-500">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col items-center text-center mb-12">
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        className="text-[#bda682] font-mono tracking-[0.25em] text-[10px] uppercase mb-4"
-                    >
-                        Technical Complications
-                    </motion.p>
-                    <motion.h2 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-bold text-[#1c1b1a] tracking-tight mb-6 font-serif-luxury"
-                    >
-                        Technical <span className="text-gold-gradient text-glow-gold font-serif-luxury">Capabilities</span>
-                    </motion.h2>
-                    <motion.p 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-zinc-500 text-lg max-w-2xl font-medium leading-relaxed"
-                    >
-                      Just as watch complications add functionality beyond telling time, these technologies enable me to develop responsive, interactive, and scalable web applications with seamless user experiences.
-                    </motion.p>
+        <section id="skills" ref={ref} className="w-full py-20 md:py-28 bg-[#f7f4eb] text-[#11140e]  relative overflow-hidden">
+            <div className="container mx-auto px-6 max-w-6xl space-y-16">
+                
+                {/* Section Header */}
+                <div className="space-y-4">
+                    <p className="text-[#bda682] font-mono tracking-widest text-sm uppercase font-bold">
+                        / TECHNICAL CAPABILITIES
+                    </p>
+                    <h2 className="text-5xl sm:text-7xl md:text-8xl font-display tracking-tight text-[#11140e] uppercase">
+                        SKILLS & <span className="text-[#bda682]">TECHNOLOGIES</span>
+                    </h2>
                 </div>
 
-                {/* Desktop Layout: Infinite Horizontal Scroll Tickers */}
-                <div className="relative overflow-hidden w-full hidden md:flex flex-col gap-12">
-                    {/* Row 1: Left to Right */}
-                    <div className="flex overflow-hidden group">
-                        <motion.div 
-                            className="flex whitespace-nowrap gap-8 py-4 px-4"
-                            animate={{ x: [0, -1035] }}
-                            transition={{ 
-                                repeat: Infinity, 
-                                ease: "linear", 
-                                duration: 25 
-                             }}
+                {/* 4 Categorized Skill Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {SKILL_CATEGORIES.map((block) => (
+                        <div
+                            key={block.number}
+                            className="p-8 md:p-10 rounded-3xl bg-[#181c12] text-[#f7f4eb] border border-[#181c12]/20 shadow-xl space-y-6 flex flex-col justify-between"
                         >
-                            {[...SKILLS, ...SKILLS, ...SKILLS].map((skill, index) => (
-                                <div
-                                    key={index}
-                                    className="p-6 bg-white border border-zinc-200/60 rounded flex items-center gap-4 min-w-[220px] transition-all hover:border-[#bda682]/40 shadow-sm hover:shadow-md"
-                                >
-                                    <div className="p-3 rounded bg-zinc-50 border border-zinc-100 text-[#bda682]">
-                                        {skill.icon}
-                                    </div>
-                                    <span className="text-xs font-mono font-bold text-zinc-700 uppercase tracking-widest">{skill.name}</span>
-                                </div>
-                            ))}
-                        </motion.div>
-                    </div>
-
-                    {/* Row 2: Right to Left */}
-                    <div className="flex overflow-hidden group">
-                        <motion.div 
-                            className="flex whitespace-nowrap gap-8 py-4 px-4"
-                            animate={{ x: [-1035, 0] }}
-                            transition={{ 
-                                repeat: Infinity, 
-                                ease: "linear", 
-                                duration: 30 
-                            }}
-                        >
-                            {[...SKILLS, ...SKILLS, ...SKILLS].reverse().map((skill, index) => (
-                                <div
-                                    key={index}
-                                    className="p-6 bg-white border border-zinc-200/60 rounded flex items-center gap-4 min-w-[220px] transition-all hover:border-[#bda682]/40 shadow-sm hover:shadow-md"
-                                >
-                                    <div className="p-3 rounded bg-zinc-50 border border-zinc-100 text-[#bda682]">
-                                        {skill.icon}
-                                    </div>
-                                    <span className="text-xs font-mono font-bold text-zinc-700 uppercase tracking-widest">{skill.name}</span>
-                                </div>
-                            ))}
-                        </motion.div>
-                    </div>
-
-                    {/* Gradient Overlays matching background theme */}
-                    <div className="absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-[#fbfaf7] to-transparent z-10 pointer-events-none" />
-                    <div className="absolute top-0 right-0 w-40 h-full bg-gradient-to-l from-[#fbfaf7] to-transparent z-10 pointer-events-none" />
-                </div>
-
-                {/* Mobile Layout: Elegant static grid */}
-                <div className="grid grid-cols-2 gap-4 md:hidden">
-                    {SKILLS.map((skill, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 15 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05, duration: 0.4 }}
-                            className="p-4 bg-white border border-zinc-200/60 rounded-2xl flex flex-col items-start gap-3 transition-all hover:border-[#bda682]/40 shadow-sm"
-                        >
-                            <div className="p-2.5 rounded-lg bg-zinc-50 border border-zinc-100 text-[#bda682]">
-                                {skill.icon}
+                            <div className="space-y-3">
+                                <span className="text-2xl font-mono text-[#bda682] font-bold">
+                                    {block.number} SKILL
+                                </span>
+                                <h3 className="text-3xl font-display text-[#f7f4eb] tracking-wide">
+                                    {block.category}
+                                </h3>
+                                <p className="text-zinc-400 text-sm font-sans leading-relaxed">
+                                    {block.description}
+                                </p>
                             </div>
-                            <span className="text-[10px] font-mono font-bold text-zinc-700 uppercase tracking-widest leading-none">
-                                {skill.name}
-                            </span>
-                        </motion.div>
+
+                            {/* Skills Pills */}
+                            <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-800">
+                                {block.skills.map((skill) => (
+                                    <span
+                                        key={skill}
+                                        className="px-3.5 py-1.5 rounded-full border border-zinc-700 bg-zinc-900/80 text-[#f7f4eb] text-xs font-mono font-medium hover:border-[#bda682] hover:text-[#bda682] transition-colors"
+                                    >
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
                     ))}
                 </div>
+
             </div>
         </section>
     );
@@ -133,3 +86,4 @@ const Skills = forwardRef<HTMLElement>((props, ref) => {
 Skills.displayName = 'Skills';
 
 export default Skills;
+

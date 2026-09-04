@@ -3,36 +3,31 @@
 import Preloader from "@/common/Preloader";
 import Header from "@/common/Header";
 import Hero from "@/common/Hero";
-import About from "@/common/About";
-import Skills from "@/common/Skills";
-import Experience from "@/common/Experience";
-import Achievements from "@/common/Achievements";
+import MarqueeBanner from "@/common/MarqueeBanner";
 import Projects from "@/common/Projects";
-import Contact from "@/common/Contact";
+import Experience from "@/common/Experience";
+import Skills from "@/common/Skills";
+import AboutPreview from "@/common/AboutPreview";
+import ContactCTA from "@/common/ContactCTA";
 import Footer from "@/common/Footer";
-import FloatingWatch from "@/common/FloatingWatch";
-import { useRef } from "react";
 
 export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
   return (
     <>
       <Preloader />
       <Header />
-      <main className="flex flex-col min-h-screen bg-background transition-colors duration-500 overflow-x-hidden">
-        <div ref={containerRef} className="relative overflow-visible">
-            <FloatingWatch />
-            <Hero />
-            <About />
-        </div>
-        <Skills />
-        <Experience />
-        <Achievements />
+      <main className="flex flex-col min-h-screen bg-[#f7f4eb] text-[#000000] overflow-x-hidden">
+        <Hero />
+        <MarqueeBanner />
         <Projects />
-        <Contact />
+        <Experience />
+        <Skills />
+        <AboutPreview />
+        <ContactCTA />
         <Footer />
       </main>
     </>
   );
 }
+
+

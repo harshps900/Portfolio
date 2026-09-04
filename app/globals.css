@@ -5,64 +5,56 @@ html {
 }
 
 :root {
-  --background: #fbfaf7;
-  --foreground: #1c1b1a;
-  --primary: #bda682;
-  --secondary: #967f59;
-  --card: #ffffff;
-  --border: #e9e8e2;
+  --background-cream: #f7f4eb;
+  --text-dark: #000000;
+  --accent-black: #000000;
+  --accent-gold: #bda682;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-card: var(--card);
-  --color-border-subtle: var(--border);
+  --color-cream: var(--background-cream);
+  --color-dark: var(--text-dark);
   --font-sans: var(--font-sans);
-  --font-serif: var(--font-serif);
+  --font-fjalla: var(--font-fjalla);
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--background-cream);
+  color: var(--text-dark);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hide default cursor on desktop fine pointer devices */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
 @layer utilities {
-  .text-glow-gold {
-    text-shadow: 0 0 20px rgba(197, 168, 128, 0.3);
-  }
-  .text-gold-gradient {
-    background: linear-gradient(135deg, #1c1b1a 0%, #bda682 60%, #866d48 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .font-serif-luxury {
-    font-family: var(--font-serif), serif;
-  }
-  .bg-glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  .font-display {
+    font-family: var(--font-fjalla), var(--font-sans), sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 }
 
-@keyframes scan {
-  from { background-position: 0 0; }
-  to { background-position: 0 100%; }
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
-.animate-scan {
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(16, 185, 129, 0.05) 50%,
-    rgba(16, 185, 129, 0.2) 50.5%,
-    rgba(16, 185, 129, 0.05) 51%,
-    transparent 100%
-  );
-  background-size: 100% 200%;
-  animation: scan 4s linear infinite;
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 22s linear infinite;
 }
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
+
