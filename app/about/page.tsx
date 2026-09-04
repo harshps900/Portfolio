@@ -2,6 +2,7 @@
 
 import Header from "@/common/Header";
 import Footer from "@/common/Footer";
+import Achievements from "@/common/Achievements";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -79,6 +80,9 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+
+          {/* Achievements Section */}
+          <Achievements />
 
           {/* Personal Interests Grid */}
           <div className="space-y-8 pt-8">

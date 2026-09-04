@@ -6,6 +6,7 @@ import Hero from "@/common/Hero";
 import MarqueeBanner from "@/common/MarqueeBanner";
 import Projects from "@/common/Projects";
 import Experience from "@/common/Experience";
+import Achievements from "@/common/Achievements";
 import Skills from "@/common/Skills";
 import AboutPreview from "@/common/AboutPreview";
 import ContactCTA from "@/common/ContactCTA";
@@ -21,6 +22,7 @@ export default function Home() {
         <MarqueeBanner />
         <Projects />
         <Experience />
+        <Achievements />
         <Skills />
         <AboutPreview />
         <ContactCTA />

@@ -53,6 +53,8 @@ export default function CustomCursor() {
 
     const handleMouseDown = () => setIsMouseDown(true);
     const handleMouseUp = () => setIsMouseDown(false);
+    const handleDblClick = () => setIsMouseDown(false);
+    const handleDragEnd = () => setIsMouseDown(false);
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
@@ -77,6 +79,8 @@ export default function CustomCursor() {
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     window.addEventListener("mousedown", handleMouseDown, { passive: true });
     window.addEventListener("mouseup", handleMouseUp, { passive: true });
+    window.addEventListener("dblclick", handleDblClick, { passive: true });
+    window.addEventListener("dragend", handleDragEnd, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
     document.addEventListener("mouseover", handleMouseOver, { passive: true });
@@ -86,6 +90,8 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("dblclick", handleDblClick);
+      window.removeEventListener("dragend", handleDragEnd);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseover", handleMouseOver);
@@ -99,8 +105,12 @@ export default function CustomCursor() {
       {/* Precision Inner Dot */}
       <div
         ref={dotRef}
-        className={`fixed top-0 left-0 w-2.5 h-2.5 bg-[#bda682] rounded-full transition-transform duration-150 ease-out ${
-          isMouseDown ? "scale-50" : isHovered ? "scale-0" : "scale-100"
+        className={`fixed top-0 left-0 w-2 h-2 bg-[#bda682] rounded-full transition-transform duration-150 ease-out ${
+          isMouseDown
+            ? "scale-50"
+            : cursorText
+            ? "scale-0 opacity-0"
+            : "scale-100"
         }`}
       />
 
@@ -109,15 +119,19 @@ export default function CustomCursor() {
         ref={ringRef}
         className={`fixed top-0 left-0 flex items-center justify-center transition-all duration-200 ease-out ${
           cursorText
-            ? "px-4 py-2 bg-[#bda682] text-[#000000] rounded-full font-display text-xs tracking-widest shadow-2xl scale-100"
+            ? "px-4 py-2 bg-[#bda682] text-[#000000] rounded-full font-display text-xs tracking-widest shadow-2xl scale-100 border border-black/10"
             : isHovered
-            ? "w-14 h-14 border-2 border-[#bda682] bg-[#bda682]/20 rounded-full backdrop-blur-[1px] scale-110"
+            ? "w-14 h-14 border border-[#bda682] bg-transparent rounded-full scale-100"
             : isMouseDown
-            ? "w-7 h-7 border border-[#000000] rounded-full scale-90"
-            : "w-9 h-9 border border-[#000000]/50 rounded-full"
+            ? "w-7 h-7 border border-[#000000] bg-transparent rounded-full scale-90"
+            : "w-9 h-9 border border-[#000000]/30 bg-transparent rounded-full"
         }`}
       >
-        {cursorText && <span>{cursorText}</span>}
+        {cursorText && (
+          <span className="font-bold">
+            {cursorText}
+          </span>
+        )}
       </div>
     </div>
   );

@@ -72,7 +72,7 @@ export default function ContactPage() {
           <div className="p-8 sm:p-12 rounded-3xl bg-[#000000] text-[#f7f4eb] space-y-4 shadow-xl">
             <p className="text-[#bda682] font-mono text-xs tracking-widest uppercase font-bold">LET&apos;S CONNECT</p>
             <blockquote className="text-2xl sm:text-4xl font-display tracking-wide leading-snug">
-              &ldquo;Have a project, job opportunity, or just want to say hi? Drop a message below.&rdquo;
+              &ldquo;Have a project, job opportunity, or just want to say hi? Drop a message below&rdquo;
             </blockquote>
           </div>
 
@@ -143,12 +143,19 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-8">
               <div className="p-8 rounded-3xl bg-[#000000] text-[#f7f4eb] space-y-4 shadow-xl">
                 <div className="flex items-center gap-3 text-[#bda682]">
-                  <Mail className="w-6 h-6" />
+                  <Mail className="w-5 h-5" />
                   <span className="font-mono text-xs uppercase tracking-widest font-bold">DIRECT EMAIL</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-display tracking-wide break-all text-[#f7f4eb]">
-                  <a href="mailto:harshpalsingh565@gmail.com">harshpalsingh565@gmail.com</a>
-                </h3>
+                <div className="pt-1">
+                  <a
+                    href="mailto:harshpalsingh565@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg sm:text-xl font-mono font-bold text-[#f7f4eb] hover:text-[#bda682] transition-colors break-all block underline decoration-[#bda682]/50 underline-offset-4"
+                  >
+                    harshpalsingh565@gmail.com
+                  </a>
+                </div>
                 <p className="text-zinc-400 text-xs font-sans">
                   Always responsive for project inquiries, freelance work, and engineering roles.
                 </p>

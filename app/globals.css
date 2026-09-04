@@ -26,9 +26,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hide default cursor on desktop fine pointer devices */
+/* Hide default cursor globally on desktop fine pointer devices */
 @media (pointer: fine) {
-  *, *::before, *::after {
+  html, body, *, *::before, *::after {
     cursor: none !important;
   }
 }

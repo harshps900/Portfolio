@@ -15,9 +15,6 @@ export default function Footer() {
                 {/* Top Row: Brand & Quick Links */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-12 border-b border-zinc-800">
                     <div className="space-y-2">
-                        <span className="font-display text-3xl tracking-widest text-[#f7f4eb]">
-                            HPS
-                        </span>
                         <p className="text-zinc-400 font-mono text-xs max-w-sm">
                             Designing and engineering interactive digital experiences with clean code & thoughtful motion.
                         </p>
@@ -66,12 +63,6 @@ export default function Footer() {
                     <p>BUILT WITH NEXT.JS, REACT & TAILWIND CSS</p>
                 </div>
 
-                {/* Giant Full-Width Typographic Brand Watermark */}
-                <div className="pt-8 text-center overflow-hidden select-none pointer-events-none opacity-20">
-                    <h2 className="text-[12vw] sm:text-[14vw] md:text-[15vw] font-display uppercase tracking-tighter leading-none text-[#f7f4eb] whitespace-nowrap">
-                        HARSH PAL SINGH
-                    </h2>
-                </div>
 
             </div>
         </footer>
