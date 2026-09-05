@@ -7,6 +7,7 @@ import Link from "next/link";
 import Modercart from "./../../public/Moderncart.png";
 import AurexArtisan from "./../../public/aurex.png";
 import ChatApp from "./../../public/chatapp.png";
+import Notesio from "./../../public/notesio.png";
 
 interface Project {
   id: string;
@@ -22,6 +23,16 @@ interface Project {
 const ALL_PROJECTS: Project[] = [
   {
         id: "1.",
+        title: "Notesio SaaS & Kanban",
+        role: "Full-stack Web Developer",
+        description: "A feature-rich Note-Taking SaaS application and hybrid Kanban project management tool built for personal productivity and team collaboration.",
+        tags: ["React", "Vite", "Tailwind CSS", "SaaS"],
+        image: Notesio,
+        liveUrl: "https://notesio-zeta.vercel.app/",
+        githubUrl: "#",
+    },
+    {
+        id: "2.",
         title: "Modern Cart Website",
         role: "Full-stack Web Developer",
         description: "A visually stunning Ecommerce website built with React and Tailwind CSS and responsive layout design.",
@@ -31,7 +42,7 @@ const ALL_PROJECTS: Project[] = [
         githubUrl: "https://github.com/harshps900/project-management-system",
     },
     {
-        id: "2.",
+        id: "3.",
         title: "Aurex Artisan Website",
         role: "Full-stack Web Developer",
         description: "A visually striking interactive website for an artisan export company built with smooth scrolling and responsive layout design.",
@@ -41,7 +52,7 @@ const ALL_PROJECTS: Project[] = [
         githubUrl: "https://github.com/Ujjwal9329/artisan-exports-hub",
     },
     {
-        id: "3.",
+        id: "4.",
         title: "Chat Application",
         role: "Full-stack Web Developer",
         description: "A modern chat application with real-time messaging, user authentication, and a responsive interface built with React and Tailwind CSS.",
