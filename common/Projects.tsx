@@ -37,7 +37,7 @@ const PROJECTS: Project[] = [
         description: "A visually stunning Ecommerce website built with React and Tailwind CSS and responsive layout design.",
         tags: ["React", "Tailwind CSS", "HTML"],
         image: Modercart,
-        liveUrl: "https://project-management-system-nine-ashen.vercel.app/",
+        liveUrl: "https://modern-cart-ecommerce-website.vercel.app/",
         githubUrl: "https://github.com/harshps900/project-management-system",
     },
     {
