@@ -1,89 +1,104 @@
 "use client";
 
 import { forwardRef } from "react";
+import { motion } from "framer-motion";
 
-const SKILL_CATEGORIES = [
-    {
-        number: "01",
-        category: "FRONTEND ENGINEERING",
-        description: "Building modern, responsive, and interactive user interfaces with optimal performance.",
-        skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "React.js", "Next.js", "Redux Toolkit", "Tailwind CSS", "Axios"],
-    },
-    {
-        number: "02",
-        category: "BACKEND ARCHITECTURE",
-        description: "Creating scalable RESTful APIs, authentication protocols, and server-side applications.",
-        skills: ["Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs", "Socket.io", "JWT Auth"],
-    },
-    {
-        number: "03",
-        category: "Web design",
-        description: "Creating visually appealing, user-friendly, and responsive website layouts using modern design principles and tools.",
-        skills: ["Figma", "Wireframing", "Prototyping", "UI/UX Design"],
-    },
-    {
-        number: "04",
-        category: "TOOLS & WORKFLOW",
-        description: "Developer tooling for building, testing, version control, and production deployments.",
-        skills: ["Git", "GitHub", "Vercel", "Postman", "VS Code", "NPM", "Webpack / Vite"],
-    },
+export const SKILL_CATEGORIES = [
+  {
+    number: "01",
+    category: "Frontend Engineering",
+    description: "Building modern, responsive, and performant web interfaces using React and Next.js ecosystem.",
+    skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "React.js", "Next.js", "Redux Toolkit", "Tailwind CSS", "Axios"],
+  },
+  {
+    number: "02",
+    category: "Backend & Database",
+    description: "Creating RESTful API endpoints, server controllers, authentication flows, and database schemas.",
+    skills: ["Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs", "Socket.io", "JWT Auth"],
+  },
+  {
+    number: "03",
+    category: "Web & Product Design",
+    description: "Translating wireframes and visual design systems into interactive code layouts with focus on UX.",
+    skills: ["Figma", "Wireframing", "Prototyping", "Responsive Layouts"],
+  },
+  {
+    number: "04",
+    category: "Tools & Ecosystem",
+    description: "Developer tooling for version control, automated building, testing, and continuous cloud deployments.",
+    skills: ["Git", "GitHub", "Vercel", "Postman", "VS Code", "NPM / Yarn", "Vite"],
+  },
 ];
 
 const Skills = forwardRef<HTMLElement>((props, ref) => {
-    return (
-        <section id="skills" ref={ref} className="w-full py-20 md:py-28 bg-[#f7f4eb] text-[#11140e]  relative overflow-hidden">
-            <div className="container mx-auto px-6 max-w-6xl space-y-16">
-                
-                {/* Section Header */}
-                <div className="space-y-4">
-                    <p className="text-[#bda682] font-mono tracking-widest text-sm uppercase font-bold">
-                        / TECHNICAL CAPABILITIES
-                    </p>
-                    <h2 className="text-5xl sm:text-7xl md:text-8xl font-display tracking-tight text-[#11140e] uppercase">
-                        SKILLS & <span className="text-[#bda682]">TECHNOLOGIES</span>
-                    </h2>
+  return (
+    <section id="skills" ref={ref} className="w-full py-16 sm:py-24 bg-[#09090b] text-[#f4f4f5] border-b border-zinc-800/60">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="container mx-auto max-w-6xl px-6 sm:px-8 lg:px-12 space-y-12"
+      >
+        
+        {/* Section Header */}
+        <div className="space-y-2">
+          <span className="text-xs font-mono font-medium text-emerald-400 uppercase tracking-widest">
+            / Technical Capabilities
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-100">
+            Skills & Stack
+          </h2>
+        </div>
+
+        {/* 4 Categorized Skill Cards with Motion Stagger & Hover */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {SKILL_CATEGORIES.map((block, idx) => (
+            <motion.div
+              key={block.number}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: idx * 0.1 }}
+              whileHover={{ y: -4 }}
+              className="p-6 sm:p-8 rounded-2xl bg-[#121215] border border-zinc-800/80 hover:border-emerald-500/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.08)] transition-all space-y-6 flex flex-col justify-between group"
+            >
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-semibold text-zinc-100 group-hover:text-emerald-300 transition-colors">
+                    {block.category}
+                  </h3>
+                  <span className="text-xs font-mono text-emerald-400 font-medium">
+                    {block.number}
+                  </span>
                 </div>
+                <p className="text-zinc-400 text-sm font-normal leading-relaxed">
+                  {block.description}
+                </p>
+              </div>
 
-                {/* 4 Categorized Skill Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {SKILL_CATEGORIES.map((block) => (
-                        <div
-                            key={block.number}
-                            className="p-8 md:p-10 rounded-3xl bg-[#181c12] text-[#f7f4eb] border border-[#181c12]/20 shadow-xl space-y-6 flex flex-col justify-between"
-                        >
-                            <div className="space-y-3">
-                                <span className="text-2xl font-mono text-[#bda682] font-bold">
-                                    {block.number} SKILL
-                                </span>
-                                <h3 className="text-3xl font-display text-[#f7f4eb] tracking-wide">
-                                    {block.category}
-                                </h3>
-                                <p className="text-zinc-400 text-sm font-sans leading-relaxed">
-                                    {block.description}
-                                </p>
-                            </div>
+              {/* Skills Pills */}
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-800/80">
+                {block.skills.map((skill) => (
+                  <motion.span
+                    key={skill}
+                    whileHover={{ scale: 1.06, y: -1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-2.5 py-1 rounded-md border border-zinc-800 bg-zinc-900/80 text-zinc-300 text-xs font-medium hover:border-emerald-500/50 hover:text-emerald-300 transition-colors inline-block cursor-default"
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
-                            {/* Skills Pills */}
-                            <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-800">
-                                {block.skills.map((skill) => (
-                                    <span
-                                        key={skill}
-                                        className="px-3.5 py-1.5 rounded-full border border-zinc-700 bg-zinc-900/80 text-[#f7f4eb] text-xs font-mono font-medium hover:border-[#bda682] hover:text-[#bda682] transition-colors"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-            </div>
-        </section>
-    );
+      </motion.div>
+    </section>
+  );
 });
 
 Skills.displayName = 'Skills';
 
 export default Skills;
-

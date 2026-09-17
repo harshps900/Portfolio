@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://portfolio-mocha-two-84yz194zfg.vercel.app/sitemap.xml

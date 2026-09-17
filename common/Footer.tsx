@@ -1,71 +1,69 @@
 "use client";
 
-import Link from "next/link";
-import { Github, Linkedin, Palette, ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-    return (
-        <footer className="w-full bg-[#0e100a] text-[#f7f4eb] pt-20 pb-8 px-6 overflow-hidden relative border-t border-[#f7f4eb]/10">
-            <div className="container mx-auto max-w-6xl space-y-16 relative z-10">
-                
-                {/* Top Row: Brand & Quick Links */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-12 border-b border-zinc-800">
-                    <div className="space-y-2">
-                        <p className="text-zinc-400 font-mono text-xs max-w-sm">
-                            Designing and engineering interactive digital experiences with clean code & thoughtful motion.
-                        </p>
-                    </div>
+  return (
+    <footer className="w-full bg-[#09090b] text-[#f4f4f5] py-12 border-t border-zinc-800/60">
+      <div className="container mx-auto max-w-6xl px-6 sm:px-8 lg:px-12 space-y-8">
+        
+        {/* Top Row: Brand & Quick Links */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-zinc-800/60">
+          <div className="space-y-1">
+            <p className="text-sm font-semibold text-zinc-200">Harsh Pal Singh</p>
+            <p className="text-xs text-zinc-400 max-w-md">
+              Full Stack & Frontend Developer specializing in React, Next.js, and interactive web products.
+            </p>
+          </div>
 
-                    {/* Social Nav Items */}
-                    <div className="flex flex-wrap items-center gap-6 text-sm font-display tracking-wider">
-                        <a
-                            href="https://www.linkedin.com/in/harsh-pal-singh-dev/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[#bda682] transition-colors"
-                        >
-                            LINKEDIN ➔
-                        </a>
-                        <a
-                            href="https://github.com/harshps900"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[#bda682] transition-colors"
-                        >
-                            GITHUB ➔
-                        </a>
-                        <a
-                            href="https://www.behance.net/educationtime"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[#bda682] transition-colors"
-                        >
-                            BEHANCE ➔
-                        </a>
-                        
-                        <button
-                            onClick={scrollToTop}
-                            aria-label="Scroll to Top"
-                            className="p-3 rounded-full border border-zinc-700 hover:border-[#bda682] hover:text-[#bda682] transition-colors cursor-pointer"
-                        >
-                            <ArrowUp className="w-4 h-4" />
-                        </button>
-                    </div>
-                </div>
+          {/* Social Nav Items */}
+          <div className="flex flex-wrap items-center gap-6 text-xs text-zinc-400 font-medium">
+            <a
+              href="https://www.linkedin.com/in/harsh-pal-singh-dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-zinc-100 transition-colors"
+            >
+              LinkedIn ➔
+            </a>
+            <a
+              href="https://github.com/harshps900"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-zinc-100 transition-colors"
+            >
+              GitHub ➔
+            </a>
+            <a
+              href="https://www.behance.net/educationtime"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-zinc-100 transition-colors"
+            >
+              Behance ➔
+            </a>
+            
+            <button
+              onClick={scrollToTop}
+              aria-label="Scroll to Top"
+              className="p-2 rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 transition-all cursor-pointer"
+            >
+              <ArrowUp className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
 
-                {/* Bottom Row: Copyright */}
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-zinc-500">
-                    <p>© 2026 HARSH PAL SINGH • CREATIVE WEB DEVELOPER</p>
-                    <p>BUILT WITH NEXT.JS, REACT & TAILWIND CSS</p>
-                </div>
+        {/* Bottom Row: Copyright */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500">
+          <p>© {new Date().getFullYear()} Harsh Pal Singh. All rights reserved.</p>
+          <p>Built with Next.js, React & Tailwind CSS</p>
+        </div>
 
-
-            </div>
-        </footer>
-    );
+      </div>
+    </footer>
+  );
 }
-

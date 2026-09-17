@@ -1,70 +1,107 @@
 "use client";
 
 import Link from "next/link";
-import TextType from "./TextType";
+import { motion } from "framer-motion";
+import MatrixRain from "./MatrixRain";
+import SplitText from "./SplitText";
+import ShinyText from "./ShinyText";
 
 export default function Hero() {
-    return (
-        <section
-            id="home"
-            className="w-full min-h-[90vh] flex items-center justify-center relative overflow-hidden bg-[#181c12] text-[#f7f4eb] pt-28 pb-20 px-6"
+  return (
+    <section
+      id="home"
+      className="w-full min-h-[90vh] flex items-center justify-center relative bg-[#09090b] text-[#f4f4f5] pt-32 pb-20 border-b border-zinc-800/60 overflow-hidden bg-grid-pattern"
+    >
+      {/* Ambient Emerald Glow Aura */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
+
+      {/* Matrix Canvas Rain Background */}
+      <MatrixRain />
+
+      {/* Hero Foreground Content */}
+      <div className="container mx-auto max-w-6xl px-6 sm:px-8 lg:px-12 text-center flex flex-col items-center justify-center space-y-8 relative z-10">
+        
+        {/* Availability Badge with ShinyText */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 backdrop-blur-md border border-emerald-800/60 text-zinc-300 text-xs font-medium shadow-sm"
         >
-            {/* Ambient Accents */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#bda682]/10 rounded-full blur-[140px] pointer-events-none" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#967f59]/10 rounded-full blur-[140px] pointer-events-none" />
+          <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.9)] animate-pulse" />
+          <ShinyText text="Available for work" className="text-zinc-200" />
+        </motion.div>
 
-            <div className="container mx-auto max-w-5xl relative z-10 text-center flex flex-col items-center justify-center space-y-8">
-                
-                {/* Greeting Chip */}
-                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#f7f4eb]/10 border border-[#f7f4eb]/20 text-[#f7f4eb] text-xs sm:text-sm font-mono tracking-widest uppercase">
-                    HI, I&apos;M <span className="font-bold text-[#bda682]">HARSH PAL SINGH</span>
-                </div>
+        {/* Main Display Headline with SplitText */}
+        <div className="max-w-3xl">
+          <SplitText
+            text="Full Stack & Frontend Developer"
+            className="text-5xl sm:text-7xl font-bold tracking-tight leading-[1.05] text-zinc-100"
+          />
+        </div>
 
-                {/* Main Display Title */}
-                <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-display tracking-tight leading-[0.95] text-[#f7f4eb] max-w-5xl uppercase">
-                    CREATIVE WEB DEVELOPER
-                </h1>
+        {/* Subtitle Tagline */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="max-w-2xl text-base sm:text-lg text-zinc-400 font-normal leading-relaxed text-center"
+        >
+          Designing and engineering high-performance React & Next.js web applications, MERN stack products, and interactive digital experiences with clean code and purpose.
+        </motion.p>
 
-                {/* Subtitle Animated Text */}
-                <div className="text-base sm:text-xl md:text-2xl font-mono text-[#bda682] tracking-wider uppercase flex items-center justify-center gap-2">
-                    <span>SPECIALIZING IN</span>
-                    <span className="text-[#f7f4eb] font-bold underline decoration-[#bda682]/50 underline-offset-4">
-                        <TextType
-                            text={["MERN Stack", "Interactive UI", "Next.js & React", "High Performance"]}
-                            typingSpeed={70}
-                            pauseDuration={1800}
-                            showCursor={true}
-                            cursorCharacter="|"
-                        />
-                    </span>
-                </div>
+        {/* Standardized Action Buttons with Motion */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-wrap items-center justify-center gap-3 pt-2"
+        >
+          <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }}>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-zinc-100 text-zinc-950 hover:bg-white text-sm font-medium transition-all shadow-sm"
+            >
+              Get In Touch ➔
+            </Link>
+          </motion.div>
 
-                {/* Description Tagline */}
-                <p className="max-w-2xl text-base sm:text-lg text-zinc-300 font-sans font-normal leading-relaxed text-center">
-                    Designing and developing interactive web experiences that are fast, beautiful, and built with purpose — crafted through thoughtful design, smooth motion, and clean code.
-                </p>
+          <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }}>
+            <Link
+              href="/project"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-zinc-800 bg-zinc-900/80 backdrop-blur-md text-zinc-200 hover:bg-zinc-800 text-sm font-medium transition-all"
+            >
+              View Projects
+            </Link>
+          </motion.div>
+        </motion.div>
 
-                {/* CTA Action Buttons */}
-                <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-                    <Link
-                        href="/contact"
-                        className="px-8 py-3.5 rounded-full border border-[#f7f4eb] bg-[#f7f4eb] text-[#181c12] hover:bg-[#bda682] hover:border-[#bda682] hover:text-[#181c12] font-display text-lg tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg"
-                    >
-                        Get In Touch ➔
-                    </Link>
+        {/* Matrix Metrics Row with Emerald Accents */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-zinc-800/60 w-full max-w-3xl"
+        >
+          <div className="p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-emerald-500/40 backdrop-blur-sm space-y-0.5 transition-colors">
+            <p className="text-xl font-bold font-mono text-zinc-100">1 Year</p>
+            <p className="text-xs text-zinc-400 font-medium">Experience</p>
+          </div>
+          <div className="p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-emerald-500/40 backdrop-blur-sm space-y-0.5 transition-colors">
+            <p className="text-xl font-bold font-mono text-zinc-100">10+</p>
+            <p className="text-xs text-zinc-400 font-medium">Projects Built</p>
+          </div>
+          <div className="p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-emerald-500/40 backdrop-blur-sm space-y-0.5 transition-colors">
+            <p className="text-xl font-bold font-mono text-emerald-400">99.9%</p>
+            <p className="text-xs text-zinc-400 font-medium">System Uptime</p>
+          </div>
+          <div className="p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-emerald-500/40 backdrop-blur-sm space-y-0.5 transition-colors">
+            <p className="text-xl font-bold font-mono text-zinc-100">MERN / Next</p>
+            <p className="text-xs text-zinc-400 font-medium">Core Stack</p>
+          </div>
+        </motion.div>
 
-                    <a
-                        href="/Harsh_Pal_Singh_Resume.pdf"
-                        download="Harsh_Pal_Singh_Resume.pdf"
-                        className="px-8 py-3.5 rounded-full border border-[#f7f4eb]/30 text-[#f7f4eb] hover:border-[#bda682] hover:text-[#bda682] font-display text-lg tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
-                    >
-                        Download CV
-                    </a>
-                </div>
-
-            </div>
-        </section>
-    );
+      </div>
+    </section>
+  );
 }
-
-

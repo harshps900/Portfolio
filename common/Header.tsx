@@ -2,84 +2,128 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Menu } from "lucide-react";
 
 const NAV_ITEMS = [
-  { number: "01.", label: "Home", href: "/" },
-  { number: "02.", label: "About", href: "/about" },
-  { number: "03.", label: "Project", href: "/project" },
-  { number: "04.", label: "Experience", href: "/experience" },
-  { number: "05.", label: "Contact", href: "/contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/project" },
+  { label: "Experience", href: "/experience" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
-      {/* Floating Header Bar */}
-      <header className="fixed top-0 left-0 w-full z-40 p-6 md:p-8 flex justify-end items-center pointer-events-none">
-        {/* Brand Logo */}
-        {/* <Link
-          href="/"
-          className="pointer-events-auto flex items-center gap-2 group"
-        >
-          <span className="font-display text-2xl md:text-3xl tracking-widest text-[#f7f4eb] drop-shadow-md bg-[#000000] px-4 py-1.5 rounded-full border border-white/20 group-hover:border-[#bda682] transition-colors">
-            HPS
-          </span>
-        </Link> */}
+      {/* Top Navbar */}
+      <header className="fixed top-0 left-0 w-full z-40 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/60 py-4 transition-all">
+        <div className="container mx-auto max-w-6xl px-6 sm:px-8 lg:px-12 flex items-center justify-between">
+          {/* Brand Logo */}
+          <Link
+            href="/"
+            className="flex items-center gap-2 group"
+          >
+            <span className="font-semibold text-sm tracking-wider text-zinc-100 group-hover:text-emerald-400 transition-colors">
+              Harsh Pal Singh
+            </span>
+            <span className="text-xs text-emerald-400 font-mono">/ Dev</span>
+          </Link>
 
-        {/* Floating Menu Toggle Button */}
-        <button
-          onClick={() => setIsOpen(true)}
-          aria-label="Open Navigation Menu"
-          className="pointer-events-auto w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#000000] text-[#f7f4eb] border border-white/20 flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl cursor-pointer group"
-        >
-          <Menu className="w-6 h-6 text-[#f7f4eb] group-hover:text-[#bda682] transition-colors" />
-        </button>
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-8">
+            {NAV_ITEMS.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`relative text-sm font-medium py-1 transition-colors ${
+                    isActive ? "text-emerald-400" : "text-zinc-400 hover:text-zinc-100"
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNav"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-emerald-400 rounded-full"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Desktop Right CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            <motion.a
+              whileHover={{ scale: 1.04, y: -1 }}
+              whileTap={{ scale: 0.96 }}
+              href="/Harsh_Pal_Singh_Resume.pdf"
+              download="Harsh_Pal_Singh_Resume.pdf"
+              className="inline-flex items-center justify-center px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-200 hover:border-emerald-500/50 hover:text-emerald-300 text-xs font-medium transition-colors"
+            >
+              Resume ➔
+            </motion.a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setIsOpen(true)}
+            aria-label="Open Navigation Menu"
+            className="md:hidden p-2 rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-200 hover:border-emerald-500/50 hover:text-emerald-400 transition-all cursor-pointer"
+          >
+            <Menu className="w-5 h-5 text-zinc-200" />
+          </motion.button>
+        </div>
       </header>
 
-      {/* Fullscreen Navigation Overlay Drawer */}
+      {/* Fullscreen Navigation Overlay Drawer for Mobile */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 1, x: "100%" }}
-            animate={{ opacity: 1, x: "0%" }}
-            exit={{ opacity: 1, x: "100%" }}
-            transition={{ duration: 0.55, ease: [0.86, 0, 0.34, 1] }}
-            className="fixed inset-0 z-50 bg-[#000000] text-[#f7f4eb] flex flex-col justify-between p-8 md:p-16 overflow-y-auto"
+            initial={{ opacity: 0, y: "-100%" }}
+            animate={{ opacity: 1, y: "0%" }}
+            exit={{ opacity: 0, y: "-100%" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-xl text-zinc-100 flex flex-col justify-between p-6 md:p-12 overflow-y-auto"
           >
-            {/* Close Button Header */}
-            <div className="flex justify-end items-center">
+            {/* Header row in mobile overlay */}
+            <div className="flex justify-between items-center pb-6 border-b border-zinc-800/80">
+              <span className="font-semibold text-sm tracking-wider text-zinc-100">
+                Harsh Pal Singh <span className="text-emerald-400 font-mono text-xs">/ Dev</span>
+              </span>
               <button
                 onClick={() => setIsOpen(false)}
                 aria-label="Close Navigation Menu"
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-[#bda682] transition-all cursor-pointer"
+                className="p-2 rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-200 hover:border-emerald-500/50 hover:text-emerald-400 transition-all cursor-pointer"
               >
-                <X className="w-6 h-6 text-[#f7f4eb]" />
+                <X className="w-5 h-5 text-zinc-200" />
               </button>
             </div>
 
-            {/* Navigation Links List */}
+            {/* Navigation Links */}
             <div className="my-auto py-8">
-              <nav className="flex flex-col gap-4 md:gap-6 max-w-4xl">
+              <nav className="flex flex-col gap-6">
                 {NAV_ITEMS.map((item, idx) => (
                   <motion.div
                     key={item.label}
-                    initial={{ opacity: 0, x: -30 }}
+                    initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.08 + idx * 0.04, duration: 0.35 }}
+                    transition={{ delay: 0.05 + idx * 0.03, duration: 0.25 }}
                   >
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="group flex items-baseline gap-4 md:gap-8 text-5xl sm:text-7xl md:text-8xl font-display hover:text-[#bda682] transition-colors"
+                      className="text-3xl font-semibold text-zinc-300 hover:text-emerald-400 transition-colors"
                     >
-                      <span className="text-lg sm:text-3xl font-mono text-zinc-500 group-hover:text-[#bda682] transition-colors">
-                        {item.number}
-                      </span>
-                      <span className="tracking-wide">{item.label}</span>
+                      {item.label}
                     </Link>
                   </motion.div>
                 ))}
@@ -87,14 +131,14 @@ export default function Header() {
             </div>
 
             {/* Footer / Resume link */}
-            <div className="pt-8 border-t border-zinc-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-zinc-400">
-              <p>© HARSH PAL SINGH • CREATIVE WEB DEVELOPER</p>
+            <div className="pt-6 border-t border-zinc-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-400">
+              <p>© HARSH PAL SINGH</p>
               <a
                 href="/Harsh_Pal_Singh_Resume.pdf"
                 download="Harsh_Pal_Singh_Resume.pdf"
-                className="px-6 py-2.5 rounded-full bg-[#f7f4eb] text-[#000000] font-display text-sm hover:bg-[#bda682] transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-emerald-400 text-zinc-950 hover:bg-emerald-300 text-sm font-semibold transition-all"
               >
-                DOWNLOAD RESUME ➔
+                Download Resume ➔
               </a>
             </div>
           </motion.div>
@@ -103,5 +147,3 @@ export default function Header() {
     </>
   );
 }
-
-

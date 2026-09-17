@@ -1,0 +1,19 @@
+# Harsh Pal Singh - Portfolio & Technical Documentation
+
+> Full Stack & Frontend Developer specializing in React.js, Next.js, MERN Stack, and high-performance web products.
+
+## Overview
+Harsh Pal Singh is a Full Stack Developer with experience at SoftSource Technolabs building scalable web applications, design systems, and RESTful APIs.
+
+## Pages & Resources
+- [Full LLM Documentation](https://portfolio-mocha-two-84yz194zfg.vercel.app/llms-full.txt): Complete detailed text representation of all projects, experience, and tech stack.
+- [Home Page](https://portfolio-mocha-two-84yz194zfg.vercel.app/): Main developer portfolio and overview.
+- [About Developer](https://portfolio-mocha-two-84yz194zfg.vercel.app/about): Background, experience at SoftSource Technolabs, and core stack.
+- [Featured Projects](https://portfolio-mocha-two-84yz194zfg.vercel.app/project): Case studies for Notesio SaaS, Modern Cart E-commerce, Aurex Artisan Export, and Chat App.
+- [Work Experience & Timeline](https://portfolio-mocha-two-84yz194zfg.vercel.app/experience): Timeline of software engineering roles and MCA Cloud Computing degree.
+- [Contact & Hiring](https://portfolio-mocha-two-84yz194zfg.vercel.app/contact): Get in touch for full-time engineering roles and contract projects.
+
+## Core Technical Capabilities
+- **Frontend**: React 19, Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Framer Motion, Redux Toolkit
+- **Backend & Database**: Node.js, Express.js, MongoDB, Mongoose, RESTful APIs, JWT Authentication
+- **DevOps & Cloud**: Vercel, Git, GitHub, Postman, Cloud Computing

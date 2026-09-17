@@ -1,13 +1,9 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Lenis from "lenis";
 
-interface SmoothScrollProps {
-  children: React.ReactNode;
-}
-
-export default function SmoothScroll({ children }: SmoothScrollProps) {
+export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -15,7 +11,6 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1,
       touchMultiplier: 1.5,
     });
 
@@ -24,10 +19,10 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       requestAnimationFrame(raf);
     }
 
-    const rafId = requestAnimationFrame(raf);
+    const animationFrameId = requestAnimationFrame(raf);
 
     return () => {
-      cancelAnimationFrame(rafId);
+      cancelAnimationFrame(animationFrameId);
       lenis.destroy();
     };
   }, []);

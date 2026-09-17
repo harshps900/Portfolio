@@ -1,0 +1,55 @@
+# Harsh Pal Singh - Full Stack & Frontend Developer Complete Documentation
+
+> Comprehensive technical documentation for AI agents, LLMs, and automated web crawlers.
+
+## Personal Information
+- **Name**: Harsh Pal Singh
+- **Role**: Full Stack & Frontend Developer
+- **GitHub**: [github.com/harshps900](https://github.com/harshps900)
+- **LinkedIn**: [linkedin.com/in/harsh-pal-singh-dev](https://www.linkedin.com/in/harsh-pal-singh-dev/)
+- **Location**: Gujarat, India
+- **Availability**: Open for full-time frontend/full-stack engineering positions and project-based contract work.
+
+## Summary
+Harsh Pal Singh is a developer specializing in React.js, Next.js, MERN stack, TypeScript, and modern web application development. Worked at SoftSource Technolabs building scalable client products, component design systems, and RESTful APIs with Lighthouse 90+ performance ratings.
+
+## Detailed Work Experience
+### 1. Frontend Developer @ SoftSource Technolabs (Oct 2025 — Mar 2026)
+- Engineered scalable client frontend applications using React.js, Next.js, and Tailwind CSS.
+- Built reusable UI token component libraries and integrated REST API endpoints with server controllers.
+
+### 2. React.js Intern @ Softsource Technolabs (Jun 2025 — Sep 2025)
+- Built interactive client interface features, improved cross-browser layout responsiveness, and collaborated under senior mentorship.
+
+### 3. Education: MCA Cloud Computing (2023 — 2025)
+- Master of Computer Applications specializing in cloud infrastructure, web architectures, and database systems.
+
+## Portfolio Projects
+### 1. Notesio SaaS & Kanban
+- **Role**: Full-stack Web Developer
+- **Stack**: React, Vite, Tailwind CSS, Node.js, Express, MongoDB
+- **URL**: [https://notesio-zeta.vercel.app/](https://notesio-zeta.vercel.app/)
+- **Description**: Note-taking SaaS application featuring hybrid Kanban task management and productivity workflows.
+
+### 2. Modern Cart E-Commerce
+- **Role**: Full-stack Web Developer
+- **Stack**: React, Tailwind CSS, HTML5
+- **URL**: [https://modern-cart-ecommerce-website.vercel.app/](https://modern-cart-ecommerce-website.vercel.app/)
+- **Description**: E-commerce web application with product search, shopping cart, and responsive checkout layout.
+
+### 3. Aurex Artisan Export Platform
+- **Role**: Full-stack Web Developer
+- **Stack**: React, Tailwind CSS, HTML5
+- **URL**: [https://www.aurexartisan.com/](https://www.aurexartisan.com/)
+- **Description**: Export hub digital platform for luxury artisan marble and stone handcrafted products.
+
+### 4. Chat Application
+- **Role**: Full-stack Web Developer
+- **Stack**: React, Tailwind CSS, Node.js, Socket.io
+- **Description**: Real-time web messaging app with authentication and live state updates.
+
+## Technical Skills Matrix
+- **Languages**: JavaScript (ES6+), TypeScript, HTML5, CSS3, SQL
+- **Frontend**: React 19, Next.js 16 (App Router), Redux Toolkit, Tailwind CSS v4, Framer Motion, Axios
+- **Backend**: Node.js, Express.js, MongoDB, Mongoose, RESTful APIs, JWT Auth, Socket.io
+- **Tooling**: Git, GitHub, Vercel, Postman, Vite, VS Code

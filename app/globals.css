@@ -5,56 +5,73 @@ html {
 }
 
 :root {
-  --background-cream: #f7f4eb;
-  --text-dark: #000000;
-  --accent-black: #000000;
-  --accent-gold: #bda682;
+  --background: #09090b;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --accent-emerald: #10b981;
+  --border-color: #27272a;
+  --card-bg: #121215;
 }
 
 @theme inline {
-  --color-cream: var(--background-cream);
-  --color-dark: var(--text-dark);
+  --color-bg: var(--background);
+  --color-card: var(--card-bg);
+  --color-emerald-accent: var(--accent-emerald);
   --font-sans: var(--font-sans);
-  --font-fjalla: var(--font-fjalla);
 }
 
 body {
-  background-color: var(--background-cream);
-  color: var(--text-dark);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hide default cursor globally on desktop fine pointer devices */
-@media (pointer: fine) {
-  html, body, *, *::before, *::after {
-    cursor: none !important;
-  }
+/* Developer Engineering Grid Background Utility */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(39, 39, 42, 0.3) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(39, 39, 42, 0.3) 1px, transparent 1px);
+  background-size: 4rem 4rem;
 }
 
-@layer utilities {
-  .font-display {
-    font-family: var(--font-fjalla), var(--font-sans), sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
+/* Ensure native interactive cursor pointer styles */
+a, button, input, select, textarea, [role="button"], label, summary {
+  cursor: pointer;
 }
 
+/* Standard scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* Infinite Marquee Animation */
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
   display: flex;
-  width: 200%;
-  animation: marquee 22s linear infinite;
+  width: max-content;
+  animation: marquee 35s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
 }
-
-
 
