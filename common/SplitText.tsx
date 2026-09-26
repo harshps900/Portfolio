@@ -6,10 +6,12 @@ export default function SplitText({
   text,
   className = "",
   delay = 0.06,
+  as = "div",
 }: {
   text: string;
   className?: string;
   delay?: number;
+  as?: "h1" | "h2" | "h3" | "h4" | "p" | "div";
 }) {
   const words = text.split(" ");
 
@@ -39,8 +41,10 @@ export default function SplitText({
     },
   };
 
+  const Component = motion[as] as React.ElementType;
+
   return (
-    <motion.div
+    <Component
       className={`flex flex-wrap items-center justify-center gap-x-[0.28em] ${className}`}
       variants={container}
       initial="hidden"
@@ -51,6 +55,6 @@ export default function SplitText({
           {word}
         </motion.span>
       ))}
-    </motion.div>
+    </Component>
   );
 }

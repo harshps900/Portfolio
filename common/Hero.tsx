@@ -35,6 +35,7 @@ export default function Hero() {
         {/* Main Display Headline with SplitText */}
         <div className="max-w-3xl">
           <SplitText
+            as="h1"
             text="Full Stack & Frontend Developer"
             className="text-5xl sm:text-7xl font-bold tracking-tight leading-[1.05] text-zinc-100"
           />

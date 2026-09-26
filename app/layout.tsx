@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     template: "%s | Harsh Pal Singh",
   },
   description: "Full Stack & Frontend Developer specializing in React.js, Next.js, MERN stack, and high-performance web applications. Available for full-time and project roles.",
+  alternates: {
+    canonical: "./",
+  },
   keywords: [
     "Harsh Pal Singh",
     "Full Stack Developer",
@@ -95,28 +98,42 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Harsh Pal Singh",
-  "jobTitle": "Full Stack & Frontend Developer",
-  "url": "https://portfolio-mocha-two-84yz194zfg.vercel.app",
-  "image": "https://portfolio-mocha-two-84yz194zfg.vercel.app/profile.jpg",
-  "sameAs": [
-    "https://www.linkedin.com/in/harsh-pal-singh-dev/",
-    "https://github.com/harshps900"
-  ],
-  "worksFor": {
-    "@type": "Organization",
-    "name": "SoftSource Technolabs"
-  },
-  "knowsAbout": [
-    "React.js",
-    "Next.js",
-    "Node.js",
-    "MongoDB",
-    "Tailwind CSS",
-    "JavaScript",
-    "TypeScript",
-    "REST APIs"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://portfolio-mocha-two-84yz194zfg.vercel.app/#person",
+      "name": "Harsh Pal Singh",
+      "jobTitle": "Full Stack & Frontend Developer",
+      "url": "https://portfolio-mocha-two-84yz194zfg.vercel.app",
+      "image": "https://portfolio-mocha-two-84yz194zfg.vercel.app/profile.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/harsh-pal-singh-dev/",
+        "https://github.com/harshps900"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "SoftSource Technolabs"
+      },
+      "knowsAbout": [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "MongoDB",
+        "Tailwind CSS",
+        "JavaScript",
+        "TypeScript",
+        "REST APIs"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://portfolio-mocha-two-84yz194zfg.vercel.app/#website",
+      "url": "https://portfolio-mocha-two-84yz194zfg.vercel.app",
+      "name": "Harsh Pal Singh Portfolio",
+      "publisher": {
+        "@id": "https://portfolio-mocha-two-84yz194zfg.vercel.app/#person"
+      }
+    }
   ]
 };
 

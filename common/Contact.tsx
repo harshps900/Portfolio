@@ -81,8 +81,9 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-medium text-zinc-400">Name</label>
+                  <label htmlFor="name" className="text-xs font-medium text-zinc-400">Name</label>
                   <input 
+                    id="name"
                     {...register("name")}
                     placeholder="Your Name"
                     className="w-full bg-zinc-900/80 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 outline-none focus:border-emerald-500 transition-colors"
@@ -91,8 +92,10 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-medium text-zinc-400">Email</label>
+                  <label htmlFor="email" className="text-xs font-medium text-zinc-400">Email</label>
                   <input 
+                    id="email"
+                    type="email"
                     {...register("email")}
                     placeholder="your@email.com"
                     className="w-full bg-zinc-900/80 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 outline-none focus:border-emerald-500 transition-colors"
@@ -102,8 +105,9 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-zinc-400">Message</label>
+                <label htmlFor="message" className="text-xs font-medium text-zinc-400">Message</label>
                 <textarea 
+                  id="message"
                   {...register("message")}
                   rows={5}
                   placeholder="Tell me about your project, idea, or inquiry..."

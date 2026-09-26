@@ -1,10 +1,49 @@
-"use client";
-
+import type { Metadata } from "next";
 import Header from "@/common/Header";
 import Footer from "@/common/Footer";
 import Achievements from "@/common/Achievements";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
+
+export const metadata: Metadata = {
+  title: "About Harsh Pal Singh | Full Stack & Frontend Developer",
+  description: "Learn about Harsh Pal Singh, Full Stack & Frontend Engineer specializing in React.js, Next.js, MERN stack, and modern web application development.",
+  keywords: [
+    "About Harsh Pal Singh",
+    "Full Stack Developer Profile",
+    "Frontend Engineer Bio",
+    "React.js Developer Skills",
+    "Next.js Developer History",
+  ],
+  alternates: {
+    canonical: "https://portfolio-mocha-two-84yz194zfg.vercel.app/about",
+  },
+  openGraph: {
+    title: "About Harsh Pal Singh | Full Stack & Frontend Developer",
+    description: "Learn about Harsh Pal Singh, Full Stack & Frontend Engineer specializing in React.js, Next.js, MERN stack, and modern web application development.",
+    url: "https://portfolio-mocha-two-84yz194zfg.vercel.app/about",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://portfolio-mocha-two-84yz194zfg.vercel.app"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://portfolio-mocha-two-84yz194zfg.vercel.app/about"
+    }
+  ]
+};
 
 const METRICS = [
   { number: "1+", label: "Year Experience" },
@@ -21,6 +60,11 @@ const INTERESTS = [
 export default function AboutPage() {
   return (
     <>
+      <Script
+        id="breadcrumb-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
       <main className="min-h-screen bg-[#09090b] text-[#f4f4f5] pt-28 pb-20 px-6">
         <div className="container mx-auto max-w-6xl space-y-16">

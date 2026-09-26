@@ -1,13 +1,57 @@
-"use client";
-
+import type { Metadata } from "next";
 import Header from "@/common/Header";
 import Footer from "@/common/Footer";
 import Link from "next/link";
-import { PROJECTS, ProjectCard } from "@/common/Projects";
+import Script from "next/script";
+import { ProjectCard } from "@/common/Projects";
+import { PROJECTS } from "@/common/projectsData";
+
+export const metadata: Metadata = {
+  title: "Selected Projects & Web Applications | Harsh Pal Singh",
+  description: "Explore web applications, client solutions, and full-stack software built by Harsh Pal Singh using React.js, Next.js, Node.js, and Tailwind CSS.",
+  keywords: [
+    "Harsh Pal Singh Projects",
+    "Web Application Portfolio",
+    "Full Stack Projects",
+    "Next.js Applications Showcase",
+  ],
+  alternates: {
+    canonical: "https://portfolio-mocha-two-84yz194zfg.vercel.app/project",
+  },
+  openGraph: {
+    title: "Selected Projects & Web Applications | Harsh Pal Singh",
+    description: "Explore web applications, client solutions, and full-stack software built by Harsh Pal Singh using React.js, Next.js, Node.js, and Tailwind CSS.",
+    url: "https://portfolio-mocha-two-84yz194zfg.vercel.app/project",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://portfolio-mocha-two-84yz194zfg.vercel.app"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "https://portfolio-mocha-two-84yz194zfg.vercel.app/project"
+    }
+  ]
+};
 
 export default function ProjectPage() {
   return (
     <>
+      <Script
+        id="breadcrumb-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
       <main className="min-h-screen bg-[#09090b] text-[#f4f4f5] pt-28 pb-20 px-6">
         <div className="container mx-auto max-w-6xl space-y-16">
