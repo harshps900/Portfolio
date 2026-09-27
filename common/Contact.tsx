@@ -157,7 +157,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                 harshps900@gmail.com
               </a>
               <p className="text-zinc-400 text-xs">
-                Always open for software roles, contract work, and engineering projects.
+                Open for full-time jobs, remote roles, freelancing, part-time work, and engineering projects.
               </p>
             </motion.div>
 

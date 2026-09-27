@@ -7,7 +7,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "About Harsh Pal Singh | Full Stack & Frontend Developer",
+  title: { absolute: "About Full Stack Developer | Harsh Pal Singh" },
   description: "Learn about Harsh Pal Singh, Full Stack & Frontend Engineer specializing in React.js, Next.js, MERN stack, and modern web application development.",
   keywords: [
     "About Harsh Pal Singh",
@@ -20,9 +20,26 @@ export const metadata: Metadata = {
     canonical: "https://portfolio-mocha-two-84yz194zfg.vercel.app/about",
   },
   openGraph: {
-    title: "About Harsh Pal Singh | Full Stack & Frontend Developer",
-    description: "Learn about Harsh Pal Singh, Full Stack & Frontend Engineer specializing in React.js, Next.js, MERN stack, and modern web application development.",
+    type: "website",
+    locale: "en_US",
     url: "https://portfolio-mocha-two-84yz194zfg.vercel.app/about",
+    title: "About Full Stack Developer | Harsh Pal Singh",
+    description: "Learn about Harsh Pal Singh, Full Stack & Frontend Engineer specializing in React.js, Next.js, MERN stack, and modern web application development.",
+    siteName: "Harsh Pal Singh Portfolio",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Harsh Pal Singh - About Full Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Full Stack Developer | Harsh Pal Singh",
+    description: "Learn about Harsh Pal Singh, Full Stack & Frontend Engineer specializing in React.js, Next.js, MERN stack, and modern web application development.",
+    images: ["/profile.jpg"],
   },
 };
 
@@ -46,7 +63,7 @@ const breadcrumbJsonLd = {
 };
 
 const METRICS = [
-  { number: "1+", label: "Year Experience" },
+  { number: "6+ Mos", label: "Practical Experience" },
   { number: "15+", label: "Projects Built" },
   { number: "10+", label: "Technologies Used" },
 ];
@@ -104,13 +121,13 @@ export default function AboutPage() {
 
             <div className="lg:col-span-7 space-y-4 text-base font-normal text-zinc-300 leading-relaxed">
               <p>
-                I&apos;m a Full Stack & Frontend Engineer focused on building fast, accessible web applications with <span className="font-semibold text-zinc-100">React.js, Next.js, Node.js, and MongoDB</span>.
+                I&apos;m a Frontend & Full Stack Developer with 6+ months of practical experience building web applications using <span className="font-semibold text-zinc-100">React.js, Next.js, Node.js, and MongoDB</span>.
               </p>
               <p>
-                Having engineered real-world client features at <span className="font-semibold text-zinc-100">SoftSource Technolabs</span>, I combine modern component patterns with solid backend APIs to deliver polished production software.
+                Having engineered client features at <span className="font-semibold text-zinc-100">SoftSource Technolabs</span>, I combine modern component architecture with backend APIs to build production software.
               </p>
               <p>
-                My work centers around clean architecture, responsive UX design, and continuous optimization across the entire web stack.
+                Driven to grow my career and continuously enhance my skills, I am open to <span className="font-semibold text-emerald-400">full-time developer jobs, remote roles, freelancing, and part-time projects</span>.
               </p>
             </div>
           </div>

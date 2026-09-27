@@ -13,15 +13,39 @@ import ContactCTA from "@/common/ContactCTA";
 import Footer from "@/common/Footer";
 
 export const metadata: Metadata = {
-  title: "Harsh Pal Singh | Full Stack & Frontend Developer",
-  description: "Full Stack & Frontend Developer specializing in React.js, Next.js, MERN stack, and high-performance web applications. Available for full-time and project roles.",
+  title: { absolute: "Full Stack & Frontend Developer | Harsh Pal Singh" },
+  description: "Full Stack & Frontend Developer specializing in React.js, Next.js, MERN stack, and high-performance web applications. Available for engineering roles.",
+  keywords: [
+    "Full Stack Developer Portfolio",
+    "Frontend Engineer Harsh Pal Singh",
+    "React.js Next.js Developer",
+    "MERN Stack Applications",
+    "High Performance Web Apps",
+  ],
   alternates: {
     canonical: "https://portfolio-mocha-two-84yz194zfg.vercel.app",
   },
   openGraph: {
-    title: "Harsh Pal Singh | Full Stack & Frontend Developer",
-    description: "Full Stack & Frontend Developer specializing in React.js, Next.js, MERN stack, and high-performance web applications.",
+    type: "website",
+    locale: "en_US",
     url: "https://portfolio-mocha-two-84yz194zfg.vercel.app",
+    title: "Full Stack & Frontend Developer | Harsh Pal Singh",
+    description: "Full Stack & Frontend Developer specializing in React.js, Next.js, MERN stack, and high-performance web applications.",
+    siteName: "Harsh Pal Singh Portfolio",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Harsh Pal Singh - Full Stack & Frontend Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Full Stack & Frontend Developer | Harsh Pal Singh",
+    description: "Full Stack & Frontend Developer specializing in React.js, Next.js, MERN stack, and high-performance web applications.",
+    images: ["/profile.jpg"],
   },
 };
 

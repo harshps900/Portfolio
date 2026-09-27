@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  trailingSlash: false,
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -9,6 +10,20 @@ const nextConfig: NextConfig = {
         hostname: 'images.unsplash.com',
       }
     ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/projects',
+        destination: '/project',
+        permanent: true,
+      },
+      {
+        source: '/work',
+        destination: '/project',
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [

@@ -23,7 +23,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-mocha-two-84yz194zfg.vercel.app"),
   title: {
-    default: "Harsh Pal Singh | Full Stack & Frontend Developer",
+    default: "Full Stack & Frontend Developer | Harsh Pal Singh",
     template: "%s | Harsh Pal Singh",
   },
   description: "Full Stack & Frontend Developer specializing in React.js, Next.js, MERN stack, and high-performance web applications. Available for full-time and project roles.",

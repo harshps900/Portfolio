@@ -48,7 +48,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="max-w-2xl text-base sm:text-lg text-zinc-400 font-normal leading-relaxed text-center"
         >
-          Designing and engineering high-performance React & Next.js web applications, MERN stack products, and interactive digital experiences with clean code and purpose.
+          Frontend & Full Stack Developer with 6+ months of practical experience building React.js & Next.js web applications. Eager to grow my skills and open for full-time jobs, remote work, freelancing, or part-time projects.
         </motion.p>
 
         {/* Standardized Action Buttons with Motion */}
@@ -85,7 +85,7 @@ export default function Hero() {
           className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-zinc-800/60 w-full max-w-3xl"
         >
           <div className="p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-emerald-500/40 backdrop-blur-sm space-y-0.5 transition-colors">
-            <p className="text-xl font-bold font-mono text-zinc-100">1 Year</p>
+            <p className="text-xl font-bold font-mono text-zinc-100">6+ Months</p>
             <p className="text-xs text-zinc-400 font-medium">Experience</p>
           </div>
           <div className="p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-emerald-500/40 backdrop-blur-sm space-y-0.5 transition-colors">

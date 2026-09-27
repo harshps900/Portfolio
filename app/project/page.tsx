@@ -7,7 +7,7 @@ import { ProjectCard } from "@/common/Projects";
 import { PROJECTS } from "@/common/projectsData";
 
 export const metadata: Metadata = {
-  title: "Selected Projects & Web Applications | Harsh Pal Singh",
+  title: { absolute: "Projects & Applications | Harsh Pal Singh" },
   description: "Explore web applications, client solutions, and full-stack software built by Harsh Pal Singh using React.js, Next.js, Node.js, and Tailwind CSS.",
   keywords: [
     "Harsh Pal Singh Projects",
@@ -19,9 +19,26 @@ export const metadata: Metadata = {
     canonical: "https://portfolio-mocha-two-84yz194zfg.vercel.app/project",
   },
   openGraph: {
-    title: "Selected Projects & Web Applications | Harsh Pal Singh",
-    description: "Explore web applications, client solutions, and full-stack software built by Harsh Pal Singh using React.js, Next.js, Node.js, and Tailwind CSS.",
+    type: "website",
+    locale: "en_US",
     url: "https://portfolio-mocha-two-84yz194zfg.vercel.app/project",
+    title: "Projects & Applications | Harsh Pal Singh",
+    description: "Explore web applications, client solutions, and full-stack software built by Harsh Pal Singh using React.js, Next.js, Node.js, and Tailwind CSS.",
+    siteName: "Harsh Pal Singh Portfolio",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Harsh Pal Singh - Full Stack Projects Showcase",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects & Applications | Harsh Pal Singh",
+    description: "Explore web applications, client solutions, and full-stack software built by Harsh Pal Singh using React.js, Next.js, Node.js, and Tailwind CSS.",
+    images: ["/profile.jpg"],
   },
 };
 

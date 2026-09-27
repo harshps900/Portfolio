@@ -5,7 +5,7 @@ import Contact from "@/common/Contact";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Contact Harsh Pal Singh | Hire Full Stack Developer",
+  title: { absolute: "Contact & Hire Developer | Harsh Pal Singh" },
   description: "Get in touch with Harsh Pal Singh for full-time software developer roles, project inquiries, contract work, or technical collaboration.",
   keywords: [
     "Contact Harsh Pal Singh",
@@ -19,9 +19,26 @@ export const metadata: Metadata = {
     canonical: "https://portfolio-mocha-two-84yz194zfg.vercel.app/contact",
   },
   openGraph: {
-    title: "Contact Harsh Pal Singh | Hire Full Stack Developer",
-    description: "Get in touch with Harsh Pal Singh for full-time software developer roles, project inquiries, contract work, or technical collaboration.",
+    type: "website",
+    locale: "en_US",
     url: "https://portfolio-mocha-two-84yz194zfg.vercel.app/contact",
+    title: "Contact & Hire Developer | Harsh Pal Singh",
+    description: "Get in touch with Harsh Pal Singh for full-time software developer roles, project inquiries, contract work, or technical collaboration.",
+    siteName: "Harsh Pal Singh Portfolio",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Harsh Pal Singh - Full Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact & Hire Developer | Harsh Pal Singh",
+    description: "Get in touch with Harsh Pal Singh for full-time software developer roles, project inquiries, contract work, or technical collaboration.",
+    images: ["/profile.jpg"],
   },
 };
 

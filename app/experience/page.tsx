@@ -5,7 +5,7 @@ import Experience from "@/common/Experience";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Work Experience & Career | Harsh Pal Singh",
+  title: { absolute: "Work Experience & Career | Harsh Pal Singh" },
   description: "Explore the professional experience and engineering trajectory of Harsh Pal Singh, Full Stack & Frontend Developer at SoftSource Technolabs.",
   keywords: [
     "Harsh Pal Singh Experience",
@@ -17,9 +17,26 @@ export const metadata: Metadata = {
     canonical: "https://portfolio-mocha-two-84yz194zfg.vercel.app/experience",
   },
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://portfolio-mocha-two-84yz194zfg.vercel.app/experience",
     title: "Work Experience & Career | Harsh Pal Singh",
     description: "Explore the professional experience and engineering trajectory of Harsh Pal Singh, Full Stack & Frontend Developer at SoftSource Technolabs.",
-    url: "https://portfolio-mocha-two-84yz194zfg.vercel.app/experience",
+    siteName: "Harsh Pal Singh Portfolio",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Harsh Pal Singh - Work Experience & Career Timeline",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Work Experience & Career | Harsh Pal Singh",
+    description: "Explore the professional experience and engineering trajectory of Harsh Pal Singh, Full Stack & Frontend Developer at SoftSource Technolabs.",
+    images: ["/profile.jpg"],
   },
 };
 
