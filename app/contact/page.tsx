@@ -64,8 +64,7 @@ const breadcrumbJsonLd = {
 export default function ContactPage() {
   return (
     <>
-      <Script
-        id="breadcrumb-json-ld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />

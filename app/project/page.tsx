@@ -44,19 +44,39 @@ export const metadata: Metadata = {
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://portfolio-mocha-two-84yz194zfg.vercel.app"
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://portfolio-mocha-two-84yz194zfg.vercel.app"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projects",
+          "item": "https://portfolio-mocha-two-84yz194zfg.vercel.app/project"
+        }
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Projects",
-      "item": "https://portfolio-mocha-two-84yz194zfg.vercel.app/project"
+      "@type": "ItemList",
+      "name": "Harsh Pal Singh Projects & Software",
+      "itemListElement": PROJECTS.map((proj, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": proj.title,
+          "description": proj.description,
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web",
+          "url": proj.liveUrl || "https://portfolio-mocha-two-84yz194zfg.vercel.app/project"
+        }
+      }))
     }
   ]
 };
@@ -64,8 +84,7 @@ const breadcrumbJsonLd = {
 export default function ProjectPage() {
   return (
     <>
-      <Script
-        id="breadcrumb-json-ld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />

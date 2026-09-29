@@ -93,6 +93,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "04t-yY7FdHhcXNAaeVjAO-maoiOxiOXLDQRTanAXj_g",
+    other: {
+      "msvalidate.01": "81098BDFDB9D2AE0587F7CE5ABBC641C",
+    },
   },
 };
 
@@ -150,8 +153,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans bg-[#09090b] text-[#f4f4f5] selection:bg-zinc-800 selection:text-zinc-100" suppressHydrationWarning>
         {/* JSON-LD Structured Data for Google Rich Snippets */}
-        <Script
-          id="json-ld"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />

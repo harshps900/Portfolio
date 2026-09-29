@@ -62,8 +62,7 @@ const breadcrumbJsonLd = {
 export default function ExperiencePage() {
   return (
     <>
-      <Script
-        id="breadcrumb-json-ld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />

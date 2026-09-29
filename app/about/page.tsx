@@ -77,8 +77,7 @@ const INTERESTS = [
 export default function AboutPage() {
   return (
     <>
-      <Script
-        id="breadcrumb-json-ld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
