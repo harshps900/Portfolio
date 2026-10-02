@@ -73,8 +73,13 @@ const breadcrumbJsonLd = {
           "name": proj.title,
           "description": proj.description,
           "applicationCategory": "DeveloperApplication",
-          "operatingSystem": "Web",
-          "url": proj.liveUrl || "https://portfolio-mocha-two-84yz194zfg.vercel.app/project"
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "url": (proj.liveUrl && proj.liveUrl !== "#") ? proj.liveUrl : "https://portfolio-mocha-two-84yz194zfg.vercel.app/project"
         }
       }))
     }
